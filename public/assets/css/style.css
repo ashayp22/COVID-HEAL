@@ -2223,3 +2223,12 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+
+/*Labdhi's Additions*/
+
+.thumb1 {
+  background: url(heal1.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
+  width: 250px;
+  height: 250px;
+}
