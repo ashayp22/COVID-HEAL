@@ -8,8 +8,8 @@ const path = require('path')
 const exec = require('child_process').exec;
 const webpush = require("web-push")
 
-const publicVapidKey = 'BDm5c3wc5O_dCtsQJg2qzZ8FNXYNHQrvUwO_dabEMYOlt_X_bOOX8ejxY0hczQ-bL4MaWW4CNQ0-a6Su2VOMrdk';
-const privateVapidKey = '7CYhJ0Hhxi12wYRzGplTXpFacI_cFps3K598F-TUVe0';
+const publicVapidKey = process.env.VAPID_PUBLIC_KEY;
+const privateVapidKey = process.env.VAPID_PRIVATE_KEY;
 
 // Replace with your email
 webpush.setVapidDetails('mailto:ashayp22@gmail.com', publicVapidKey, privateVapidKey);

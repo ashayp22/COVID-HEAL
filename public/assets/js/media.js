@@ -28,7 +28,6 @@ function loadMemeImage(id) {
     })
 }
 
-v
 
 function loadMemesOnPage() {
     loadMemes()
