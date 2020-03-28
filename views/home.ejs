@@ -27,8 +27,14 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="style/cookies.css" rel="stylesheet">
 
   <link href="style/modal.css" rel="stylesheet">
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 
   <script src="scripts/main.js"></script>
 
@@ -189,10 +195,15 @@
 
         <div class="text-center">
           <h3>Call To Action</h3>
-            <p> Take this quick COVID-19 test now to verify whether you need to go get a test.</p>
+            <p>Want to see how we applied Artifical Intelligence to this pandemic?</p>
           <a class="cta-btn"
-             href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093">Take
-            a COVID-19 Test NOW!</a>
+             href="/camera">Click to see the AI</a><br><br>
+            <p>Want to get notified on the latest news and updates?</p>
+          <a class="cta-btn"
+             href="/news">Get the latest news</a><br><br>
+             <p>Want to relax with some music & memes?</p>
+           <a class="cta-btn"
+              href="/relax">Click to relax</a>
         </div>
 
       </div>
@@ -274,6 +285,11 @@
 
           </div>
 
+      </div>
+
+      <div id="cookieConsent">
+        <div id="closeCookieConsent">x</div>
+        This website is using cookies. <a href="/termsofservice" target="_blank">More info</a>. <a class="cookieConsentOK">That's Fine</a>
       </div>
 
   </main><!-- End #main -->
@@ -363,6 +379,7 @@
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/stats.js"></script>
+  <script src="scripts/cookieconsent.js"></script>
 
 </body>
 
