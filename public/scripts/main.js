@@ -366,7 +366,6 @@ var code = ""
 
 function updateLocation() {
   var current = document.getElementById("location").value;
-
   var index = -1;
   var closest = -1;
   code = ""

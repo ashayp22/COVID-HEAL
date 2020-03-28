@@ -36,9 +36,15 @@
       visibility: hidden
     }
 
+    video, #notify, #pause, #times {
+      display: none;
+      visibility: hidden;
+    }
+
   </style>
 
   <link href="style/modal.css" rel="stylesheet">
+  <link href="style/main.css" rel="stylesheet">
 
   <script src="scripts/main.js"></script>
 
@@ -76,21 +82,9 @@
             <li><a href="/news">Current News</a></li>
             <li><a href="/relax">Relax</a></li>
             <li onclick = "showModal()"><a>Change Info</a></li>
-            <!--<li><a href="blog.html">Blog</a></li>-->
-            <!--<li><a href="contact.html">Contact</a></li>-->
             <li class="drop-down"><a href="#">About</a>
                 <ul>
                     <li><a href="/team">Team</a></li>
-
-                    <!--<li class="drop-down"><a href="#">Drop Down 2</a>-->
-                    <!--<ul>-->
-                    <!--<li><a href="#">Deep Drop Down 1</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 2</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 3</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 4</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 5</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
                 </ul>
             </li>
 
@@ -110,168 +104,47 @@
         <div class="container">
           <div class="breadcrumb-hero">
             <br>
-            <h2>Don't Touch Your Face: Prevent Corona!</h2>
+            <h2>How To Stay Healthy at Home</h2>
             <br>
-            <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+            <h4>Please follow these some tips for staying healthy during home quarantine:</p><br>
+              <li style = "font-weight: bold;">Keep a clean home environment</li>
+              <li style = "font-weight: bold;">Keep your workouts going virtually</li>
+              <li style = "font-weight: bold;">Try to stick to a meal schedule</li>
+              <li style = "font-weight: bold;">Take care of your mental health</li>
+              <li style = "font-weight: bold;">Stay hydrated</li>
+              <li style = "font-weight: bold;">Try to stick to a meal schedule</li>
+              <li style = "font-weight: bold;">Wash your hands numerous times throughout the day</li>
+              <li style = "font-weight: bold;">Most importantly, don't touch your face!</li>
           </div>
-          <video id="video" width="720" height="560"></video>
-          <canvas id = "canvas" width = "720" height = "560"></canvas>
+          <h4>Scroll down to try out a cool feature that prevents the spread of Covid-19</p>
         </div>
       </div>
 
-    </section><!-- End Breadcrumbs -->
+    </section>
 
-    <!--&lt;!&ndash; ======= Pricing Section ======= &ndash;&gt;-->
-    <!--<section id="pricing" class="pricing">-->
-    <!--<div class="container">-->
 
-    <!--<div class="row">-->
-
-    <!--<div class="col-lg-3 col-md-6">-->
-    <!--<div class="box" data-aos="fade-up">-->
-    <!--<h3>Free</h3>-->
-    <!--<h4><sup>$</sup>0<span> / month</span></h4>-->
-    <!--<ul>-->
-    <!--<li>Aida dere</li>-->
-    <!--<li>Nec feugiat nisl</li>-->
-    <!--<li>Nulla at volutpat dola</li>-->
-    <!--<li class="na">Pharetra massa</li>-->
-    <!--<li class="na">Massa ultricies mi</li>-->
-    <!--</ul>-->
-    <!--<div class="btn-wrap">-->
-    <!--<a href="#" class="btn-buy">Buy Now</a>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col-lg-3 col-md-6 mt-4 mt-md-0">-->
-    <!--<div class="box featured" data-aos="fade-up" data-aos-delay="100">-->
-    <!--<h3>Business</h3>-->
-    <!--<h4><sup>$</sup>19<span> / month</span></h4>-->
-    <!--<ul>-->
-    <!--<li>Aida dere</li>-->
-    <!--<li>Nec feugiat nisl</li>-->
-    <!--<li>Nulla at volutpat dola</li>-->
-    <!--<li>Pharetra massa</li>-->
-    <!--<li class="na">Massa ultricies mi</li>-->
-    <!--</ul>-->
-    <!--<div class="btn-wrap">-->
-    <!--<a href="#" class="btn-buy">Buy Now</a>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col-lg-3 col-md-6 mt-4 mt-lg-0">-->
-    <!--<div class="box" data-aos="fade-up" data-aos-delay="200">-->
-    <!--<h3>Developer</h3>-->
-    <!--<h4><sup>$</sup>29<span> / month</span></h4>-->
-    <!--<ul>-->
-    <!--<li>Aida dere</li>-->
-    <!--<li>Nec feugiat nisl</li>-->
-    <!--<li>Nulla at volutpat dola</li>-->
-    <!--<li>Pharetra massa</li>-->
-    <!--<li>Massa ultricies mi</li>-->
-    <!--</ul>-->
-    <!--<div class="btn-wrap">-->
-    <!--<a href="#" class="btn-buy">Buy Now</a>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="col-lg-3 col-md-6 mt-4 mt-lg-0">-->
-    <!--<div class="box" data-aos="fade-up" data-aos-delay="300">-->
-    <!--<span class="advanced">Advanced</span>-->
-    <!--<h3>Ultimate</h3>-->
-    <!--<h4><sup>$</sup>49<span> / month</span></h4>-->
-    <!--<ul>-->
-    <!--<li>Aida dere</li>-->
-    <!--<li>Nec feugiat nisl</li>-->
-    <!--<li>Nulla at volutpat dola</li>-->
-    <!--<li>Pharetra massa</li>-->
-    <!--<li>Massa ultricies mi</li>-->
-    <!--</ul>-->
-    <!--<div class="btn-wrap">-->
-    <!--<a href="#" class="btn-buy">Buy Now</a>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--</div>-->
-
-    <!--</div>-->
-    <!--</section>&lt;!&ndash; End Pricing Section &ndash;&gt;-->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
-      <div class="container">
+      <div class="container" style = "text-align: center">
+        <h4>People have a common habit of touching their faces more than 20 times an hour.
+          We added in a feature that will help break this habit. Using a live camera, we can
+          detect everytime you touch your face and notify you within seconds (don't worry, we aren't saving this data).
+          Whether you're on a Zoom call, emailing a co-worker, or watching Netflix, we have you covered.
+          <br>Click below to try it out!</h3>
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+        <input id = "tryitout" class = "myButton" type = "button" value = "Loading Models..." onclick = "startVideo()">
 
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium sunt sit enim. Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio. Repellat assumenda soluta sunt pariatur error doloribus fuga.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
+        <video id="video" width="400" height="200"></video>
+        <canvas id = "canvas" width = "400" height = "200"></canvas>
+        <br>
+        <p id = "times">So far, you have touched your face 0 times</p>
+        <br>
+        <br>
+        <input id = "pause" class = "myButton" type = "button" value = "Pause Video" onclick = "pauseVideo()">
+        <br><br>
+        <input id = "notify" class = "myButton" type = "button" value = "Don't Send Notifications" onclick = "notifications()">
 
       </div>
-    </section><!-- End Frequently Asked Questions Section -->
+    </section>
 
 
     <!-- The Modal -->
@@ -283,7 +156,7 @@
           <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" value=""><br>
             <label for="name">Location:</label><br>
-              <input type="text" id="location" name="location" value="" onkeydown = "updateLocation()"><br>
+              <input type="text" id="location" name="location" value="" onkeyup = "updateLocation()"><br>
               <p id = "state"></p>
                <p id = "error" style = "color: red"></p>
             <input type="submit" value="Submit" onclick = "submit()">
@@ -379,7 +252,7 @@
   <script src="../assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <!-- <script src="../assets/js/main.js"></script> -->
+  <script src="../assets/js/main.js"></script>
 
 </body>
 
