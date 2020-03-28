@@ -59,6 +59,10 @@ function submit() {
     setCookie("code", code, 365)
 
     closeModal()
+    if(window.location.pathname == "/news") {
+      location.reload();
+    }
+
   }
 
 }
