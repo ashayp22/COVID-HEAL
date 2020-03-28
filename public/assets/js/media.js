@@ -2,12 +2,38 @@ var image = [];
 var toptext = [];
 var bottomText = [];
 
+var quotes = [];
+var authors = [];
+
 function loadQuote() {
 
     $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
-        alert(data.quoteText);
-        alert(data.quoteAuthor);
-        alert(data.quoteLink);
+
+
+        document.getElementById("quote1").innerHTML = data.quoteText;
+        document.getElementById("author1").innerHTML = data.quoteAuthor;
+
+
+    })
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote2").innerHTML = data.quoteText;
+        document.getElementById("author2").innerHTML = data.quoteAuthor;
+
+
+    })
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote3").innerHTML = data.quoteText;
+        document.getElementById("author3").innerHTML = data.quoteAuthor;
+
+
+    })
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote4").innerHTML = data.quoteText;
+        document.getElementById("author4").innerHTML = data.quoteAuthor;
+
     })
 }
 
@@ -64,6 +90,13 @@ function loadMemesOnPage() {
 }
 
 function loadQuotesOnPage(){
-    loadQuote()
-    alert("hello???")
+    loadQuote();
+
+    document.getElementById("quote1").innerHTML = quotes[0];
+
+
+    // for(i=1;i<5;i++){
+    //     document.getElementById("quote" + i.toString()).innerHTML = quotes[i];
+    //     document.getElementById("author" + i.toString()).innerHTML = authors[i];
+    // }
 }
