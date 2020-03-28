@@ -21,8 +21,6 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-//cookies: user, email, location, phone number
-
 
 function submit() {
   var name = document.getElementById("name").value;
