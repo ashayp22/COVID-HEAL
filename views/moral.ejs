@@ -27,7 +27,9 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="style/modal.css" rel="stylesheet">
 
+  <script src="scripts/main.js"></script>
   <!-- =======================================================
   * Template Name: Serenity - v2.0.0
   * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
@@ -54,6 +56,7 @@
             <li><a href="/camera">Face Touch Reminder</a></li>
             <li><a href="/news">Current News</a></li>
             <li class="active"><a href="/relax">Relax</a></li>
+            <li onclick = "showModal()"><a>Change Info</a></li>
             <!--<li><a href="blog.html">Blog</a></li>-->
             <!--<li><a href="contact.html">Contact</a></li>-->
             <li class="drop-down"><a href="#">About</a>
@@ -268,12 +271,30 @@
 
       </div>
     </section><!-- End Portfolio Section -->
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+          <p>Please input the following:</p>
+          <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value=""><br>
+            <label for="name">Location:</label><br>
+              <input type="text" id="location" name="location" value="" onkeydown = "updateLocation()"><br>
+              <p id = "state"></p>
+               <p id = "error" style = "color: red"></p>
+            <input type="submit" value="Submit" onclick = "submit()">
+            <br>
+            <input type="button" id = "close" value="Cancel" onclick = "closeModal()">
+
+        </div>
+
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
+    <!-- <div class="footer-top">
       <div class="container">
         <div class="row">
 
@@ -313,17 +334,9 @@
 
           </div>
 
-          <!--<div class="col-lg-3 col-md-6 footer-newsletter">-->
-          <!--<h4>Our Newsletter</h4>-->
-          <!--<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>-->
-          <!--<form action="" method="post">-->
-          <!--<input type="email" name="email"><input type="submit" value="Subscribe">-->
-          <!--</form>-->
-          <!--</div>-->
-
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="container">
       <div class="copyright">
