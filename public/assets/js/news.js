@@ -28,7 +28,7 @@
 //
 // }
 
-function waah(state) {
+function callAPI(state) {
     $.ajax({
         type: "GET",
         url: "https://api.smartable.ai/coronavirus/news/US",
@@ -40,10 +40,33 @@ function waah(state) {
         },
     })
         .done(function (data) {
-            alert("success");
+
             const {news} = data;
-            alert("hello world")
+
             console.log(news[0].title);
+
+
+            document.getElementById("ti1").innerHTML = "i hate semi-colons";
+
+            // $("ti1").update("New text");
+            for (i = 0; i < 10; i++) {
+                document.getElementById("ti" + (i + 1)).innerText = news[i].title;
+                document.getElementById("para" + (i + 1)).innerHTML = news[i].excerpt;
+
+
+                if (i < 4) {
+                    // var square = document.getElementsByClassName("col-md-6 d-flex align-items-stretch");//had invalid markup
+                    // // var selectBox = document.getElementById("selectBox");
+                    // // var selectedItem = selectBox.options[selectBox.selectedIndex].value;
+                    // square[i].style.backgroundImage  = "url("+news[i].images[0].url+")";
+
+                    var body = document.getElementsByClassName('card-body')[i];
+                    body.style.backgroundImage = "url(" + news[i].images[0].url + ")";
+                }
+
+            }
+
+            // alert(news[0].images[0].url)
 
         })
         .fail(function () {
@@ -52,10 +75,10 @@ function waah(state) {
 
 }
 
-function tryFunc() {
+function getNews() {
 
-    alert("ahhhhh")
-    waah()
+
+    callAPI()
 }
 
 // news[i].title;
