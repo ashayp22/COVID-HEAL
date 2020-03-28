@@ -13,12 +13,16 @@ let utils = new Utils('errorMessage'); //use utils class
 
 let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml
 
-let detectionInterval = 500
+let detectionInterval = 1000
+
+var loaded1 = false;
+var loaded2 = false;
 
 // use createFileFromUrl to "pre-build" the xml
 utils.createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
     faceCascade.load(faceCascadeFile); // in the callback, load the cascade from file
     console.log("loaded cascade")
+    loaded1 = true
 });
 
 function loadHandTrack() {
@@ -28,15 +32,39 @@ function loadHandTrack() {
     // detect objects in the image.
     console.log("loaded handtrack")
     handModel = model
-    startVideo()
+    document.getElementById('tryitout').value = "Try It Out!"
+    loaded2 = true
   });
 }
-
 
 loadHandTrack()
 
 function startVideo() {
+
+  if(loaded1 == false || loaded2 == false) {
+    playing = false
+    return;
+  }
+
+  playing = true;
+
   const video = document.getElementById('video')
+
+  video.style.visibility = "visible";
+  video.style.display = "inline"
+
+  document.getElementById('tryitout').style.visibility = "hidden";
+  document.getElementById('tryitout').style.display = "none";
+
+  document.getElementById('pause').style.visibility = "visible";
+  document.getElementById('pause').style.display = "inline";
+
+  document.getElementById('notify').style.visibility = "visible";
+  document.getElementById('notify').style.display = "inline";
+
+  document.getElementById('times').style.visibility = "visible";
+  document.getElementById('times').style.display = "inline";
+
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
@@ -48,11 +76,55 @@ function startVideo() {
   }
 }
 
+var playing = false;
+var sending = true;
+
+function pauseVideo() {
+  playing = !playing;
+  const video = document.getElementById('video')
+
+  if(playing) {
+    timer = setTimeout(detect, detectionInterval);
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      // Not adding `{ audio: true }` since we only want video now
+      navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+          //video.src = window.URL.createObjectURL(stream);
+          video.srcObject = stream;
+          video.play();
+          console.log("playing video")
+      });
+    }
+    document.getElementById("pause").value = "Pause Video";
+  } else {
+    video.pause()
+    video.currentTime = 0;
+    clearTimeout(timer);
+    document.getElementById("pause").value = "Play Video";
+  }
+
+}
+
+function notifications() {
+  sending = !sending;
+
+  if(sending) {
+    document.getElementById("notify").value = "Don't Send Notifications";
+  } else {
+    document.getElementById("notify").value = "Send Notifications";
+  }
+
+
+}
+
+var timer;
+
 video.addEventListener('playing', () => {
-  setTimeout(detect, detectionInterval);
+  timer = setTimeout(detect, detectionInterval);
 })
 
 var last = false
+
+var times = 0;
 
 function detect() {
     var video = document.getElementById('video');
@@ -80,7 +152,17 @@ function detect() {
 
         //send notification for not touching face
         if(last == true && intersecting == false) {
-          run()
+          times += 1;
+
+          if(times == 1) {
+            document.getElementById("times").innerHTML = "So far, you have touched your face " + times + " time";
+          } else {
+            document.getElementById("times").innerHTML = "So far, you have touched your face " + times + " times";
+          }
+
+          if(sending) {
+            run()
+          }
         }
 
         last = intersecting
@@ -99,7 +181,7 @@ function detect() {
         // ctx.beginPath();
         // ctx.rect(face[0], face[1], face[2], face[3]);
         // ctx.stroke();
-        setTimeout(detect, detectionInterval);
+        timer = setTimeout(detect, detectionInterval);
 
     });
 }
@@ -118,7 +200,7 @@ function rectanglesIntersect(x1,  y1,  w1,  h1, x2,  y2,  w2,  h2) {
 function detectFace() {
   var ctx = document.getElementById("canvas").getContext('2d');
   var video = document.getElementById('video');
-  ctx.drawImage(video, 0, 0, 720, 560);
+  ctx.drawImage(video, 0, 0, 400, 200);
   let src = cv.imread('canvas');
   let gray = new cv.Mat();
   cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);

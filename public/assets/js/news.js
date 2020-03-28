@@ -61,36 +61,78 @@ function callAPI(state) {
 
             const {news} = data;
 
-            console.log(news[0].title);
-            console.log(news.length);
+            if(news.length == 0) {
+              var header = document.createElement('h5');
+              header.innerHTML = "There isn't any current news based on your location.";
+              header.style.color = "black"
+              header.style.textAlign = "center"
+              document.getElementById("features").appendChild(header);
+            }
 
+            for (i = 0; i < news.length; i++) {
 
-            document.getElementById("ti1").innerHTML = "i hate semi-colons";
+              //dynamically create elements
 
-            // $("ti1").update("New text");
-            for (i = 0; i < 10; i++) {
-                document.getElementById("ti" + (i + 1)).innerText = news[i].title;
-                document.getElementById("para" + (i + 1)).innerHTML = news[i].excerpt;
+              var div1 = document.createElement('div');
+              div1.className = "col-md-6 d-flex align-items-stretch"
+              div1.style.zIndex = "0"
 
+              var div2 = document.createElement('div');
+              div2.className = "card"
 
-                if (i < 4) {
-                    // var square = document.getElementsByClassName("col-md-6 d-flex align-items-stretch");//had invalid markup
-                    // // var selectBox = document.getElementById("selectBox");
-                    // // var selectedItem = selectBox.options[selectBox.selectedIndex].value;
-                    // square[i].style.backgroundImage  = "url("+news[i].images[0].url+")";
+              var div3 = document.createElement('div');
+              div3.className = "card-body"
 
-                    var body = document.getElementsByClassName('card-body')[i];
-                    body.style.backgroundImage = "url(" + news[i].images[0].url + ")";
+              console.log(news[i].images != null)
 
-                }
+              if(news[i].images != null) {
+                div3.style.backgroundImage = "url(" + news[i].images[0].url + ")";
+              } else {
+                div3.style.backgroundImage = "url(resources/covid.jpg)";
+              }
+
+              var header = document.createElement('h5');
+              header.className = "card-title"
+              header.innerHTML = news[i].title;
+              header.style.color = "white"
+
+              var para = document.createElement('p');
+              para.className = "card-text"
+              para.innerHTML = news[i].excerpt;
+              para.style.color = "white"
+
+              var div4 = document.createElement('div');
+              div4.className = "read-more"
+
+              var a = document.createElement('a');
+              var link = document.createTextNode("Read More");
+              a.appendChild(link);
+              a.title = "Read More";
+              a.href = news[i].webUrl;
+
+              var arrow = document.createElement('i');
+              arrow.className = "icofont-arrow-right"
+
+              a.appendChild(arrow);
+              div4.prepend(a);
+              div3.appendChild(header);
+              div3.appendChild(para);
+              div3.appendChild(div4);
+              div2.appendChild(div3);
+              div1.appendChild(div2);
+
+              document.getElementById("allnews").appendChild(div1);
 
             }
 
-            // alert(news[0].images[0].url)
 
         })
         .fail(function () {
-            alert("error");
+          var header = document.createElement('h5');
+          header.innerHTML = "There isn't any current news based on your location.";
+          header.style.color = "black"
+          header.style.textAlign = "center"
+          document.getElementById("features").appendChild(header);
         });
 
 }

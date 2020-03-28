@@ -59,6 +59,10 @@ function submit() {
     setCookie("code", code, 365)
 
     closeModal()
+    if(window.location.pathname == "/news") {
+      location.reload();
+    }
+
   }
 
 }
@@ -362,7 +366,6 @@ var code = ""
 
 function updateLocation() {
   var current = document.getElementById("location").value;
-
   var index = -1;
   var closest = -1;
   code = ""
