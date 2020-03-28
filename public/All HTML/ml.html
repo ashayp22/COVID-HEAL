@@ -28,6 +28,23 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
+  <style>
+
+    canvas {
+      background-color: white;
+      display: none;
+      visibility: hidden
+    }
+
+  </style>
+
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  <script src="handtrack.min.js"></script>
+  <script src="opencv.js" type="text/javascript"></script>
+  <script src="https://docs.opencv.org/master/utils.js"></script>
+  <script defer src="scripts/camera.js"></script>
+  <script type="application/javascript" src="scripts/client.js"></script>
+
   <!-- =======================================================
   * Template Name: Serenity - v2.0.0
   * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
@@ -96,6 +113,8 @@
             <br>
             <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
           </div>
+          <video id="video" width="720" height="560"></video>
+          <canvas id = "canvas" width = "720" height = "560"></canvas>
         </div>
       </div>
       <div class="container">

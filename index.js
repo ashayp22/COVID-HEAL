@@ -43,12 +43,20 @@ app.get('/camera', function (req, res) { //handles get request
   res.render('ml');
 })
 
-app.get('/moral', function (req, res) { //handles get request
+app.get('/relax', function (req, res) { //handles get request
   res.render('moral');
 })
 
 app.get('/data', function (req, res) { //handles get request
   res.render('cookies');
+})
+
+app.get('/news', function (req, res) { //handles get request
+  res.render('news');
+})
+
+app.get('/team', function (req, res) { //handles get request
+  res.render('team');
 })
 
 app.listen(PORT, function () {
