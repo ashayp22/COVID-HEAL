@@ -24,7 +24,7 @@ app.set('view engine', 'ejs')
 app.post('/alert', (req, res) => {
   const subscription = req.body;
   res.status(201).json({});
-  const payload = JSON.stringify({ title: 'stop touching your face' });
+  const payload = JSON.stringify({ title: 'Please stop touching your face!', body: "It's for your safety!", image: "https://images.homedepot-static.com/productImages/a94ca394-40a5-47ae-973c-8c76b9d4dcb3/svn/lynch-sign-stock-signs-stop-64_1000.jpg"});
 
   webpush.sendNotification(subscription, payload).catch(error => {
     console.error(error.stack);

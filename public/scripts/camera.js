@@ -148,13 +148,20 @@ function detectFace() {
 // Hard-coded, replace with your public key
 const publicVapidKey = 'BDm5c3wc5O_dCtsQJg2qzZ8FNXYNHQrvUwO_dabEMYOlt_X_bOOX8ejxY0hczQ-bL4MaWW4CNQ0-a6Su2VOMrdk';
 
-async function run() {
+var registration;
+
+async function registerPush() {
   console.log('Registering service worker');
-  const registration = await navigator.serviceWorker.
+  registration = await navigator.serviceWorker.
     register('/scripts/worker.js');
   console.log('Registered service worker');
+}
 
-  console.log('Registering push');
+registerPush()
+
+
+async function run() {
+
   const subscription = await registration.pushManager.
     subscribe({
       userVisibleOnly: true,
