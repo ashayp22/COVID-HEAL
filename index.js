@@ -56,6 +56,14 @@ app.get('/team', function (req, res) { //handles get request
   res.render('team');
 })
 
+app.get('/termsofservice', function (req, res) { //handles get request
+  res.render('tos');
+})
+
+app.get('/privatepolicy', function (req, res) { //handles get request
+  res.render('policy');
+})
+
 app.listen(PORT, function () {
   console.log('go to http://localhost:3000/')
 })
