@@ -6,11 +6,30 @@ const formidable = require('formidable');
 const fs = require('fs');
 const path = require('path')
 const exec = require('child_process').exec;
+const webpush = require("web-push")
+
+const publicVapidKey = 'BDm5c3wc5O_dCtsQJg2qzZ8FNXYNHQrvUwO_dabEMYOlt_X_bOOX8ejxY0hczQ-bL4MaWW4CNQ0-a6Su2VOMrdk';
+const privateVapidKey = '7CYhJ0Hhxi12wYRzGplTXpFacI_cFps3K598F-TUVe0';
+
+// Replace with your email
+webpush.setVapidDetails('mailto:ashayp22@gmail.com', publicVapidKey, privateVapidKey);
 
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
+
+
+app.post('/alert', (req, res) => {
+  const subscription = req.body;
+  res.status(201).json({});
+  const payload = JSON.stringify({ title: 'Please stop touching your face!', body: "It's for your safety!", image: "https://images.homedepot-static.com/productImages/a94ca394-40a5-47ae-973c-8c76b9d4dcb3/svn/lynch-sign-stock-signs-stop-64_1000.jpg"});
+
+  webpush.sendNotification(subscription, payload).catch(error => {
+    console.error(error.stack);
+  });
+});
 
 app.get('/', function (req, res) { //handles get request
   res.render('home');
