@@ -62,6 +62,7 @@ function callAPI(state) {
             const {news} = data;
 
             console.log(news[0].title);
+            console.log(news.length);
 
 
             document.getElementById("ti1").innerHTML = "i hate semi-colons";
