@@ -28,10 +28,28 @@
 //
 // }
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+
 function callAPI(state) {
     $.ajax({
         type: "GET",
-        url: "https://api.smartable.ai/coronavirus/news/US",
+        url: "https://api.smartable.ai/coronavirus/news/" + state,
 
         // Request headers
         beforeSend: function (xhrObj) {
@@ -77,9 +95,13 @@ function callAPI(state) {
 }
 
 function getNews() {
+  var location = getCookie("code")
 
+  if(location == "") {
+    location = "US"
+  }
 
-    callAPI()
+    callAPI(location)
 }
 
 // news[i].title;

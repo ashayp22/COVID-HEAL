@@ -28,6 +28,10 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
+  <link href="style/modal.css" rel="stylesheet">
+
+  <script src="scripts/main.js"></script>
+
   <!-- =======================================================
   * Template Name: Serenity - v2.0.0
   * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
@@ -54,6 +58,7 @@
             <li><a href="/camera">Face Touch Reminder</a></li>
             <li><a href="/news">Current News</a></li>
             <li><a href="/relax">Relax</a></li>
+            <li onclick = "showModal()"><a>Change Info</a></li>
             <!--<li><a href="blog.html">Blog</a></li>-->
             <!--<li><a href="contact.html">Contact</a></li>-->
             <li class="drop-down"><a href="#">About</a>
@@ -74,6 +79,7 @@
 
 
             <li class="get-started"><a href="#get-started">Take a COVID-19 Test NOW!</a></li>
+
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -244,11 +250,31 @@
       <!--</div>-->
       <!--</section>&lt;!&ndash; End Services Section &ndash;&gt;-->
 
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <p>Please input the following:</p>
+            <label for="name">Name:</label><br>
+              <input type="text" id="name" name="name" value=""><br>
+              <label for="name">Location:</label><br>
+                <input type="text" id="location" name="location" value="" onkeydown = "updateLocation()"><br>
+                <p id = "state"></p>
+                 <p id = "error" style = "color: red"></p>
+              <input type="submit" value="Submit" onclick = "submit()">
+              <br>
+              <input type="button" id = "close" value="Cancel" onclick = "closeModal()">
+
+          </div>
+
+      </div>
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
+    <!-- <div class="footer-top">
       <div class="container">
         <div class="row">
 
@@ -296,9 +322,9 @@
             <!--</form>-->
             <!--</div>-->
 
-        </div>
-      </div>
-    </div>
+        <!-- </div>
+      </div> -->
+    <!-- </div> -->
 
     <div class="container">
       <div class="copyright">
