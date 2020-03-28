@@ -62,6 +62,7 @@ function callAPI(state) {
 
                     var body = document.getElementsByClassName('card-body')[i];
                     body.style.backgroundImage = "url(" + news[i].images[0].url + ")";
+
                 }
 
             }
