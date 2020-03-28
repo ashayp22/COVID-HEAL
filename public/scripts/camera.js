@@ -1,16 +1,3 @@
-
-
-
-// // Load the model.
-// Promise.all([
-//   faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-//   faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-//   faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-//   faceapi.nets.faceExpressionNet.loadFromUri('/models')
-// ]).then(loadHandTrack)
-
-
-
 const modelParams = {
     flipHorizontal: false,   // flip e.g for video
     maxNumBoxes: 20,        // maximum number of boxes to detect
@@ -25,6 +12,8 @@ let faceCascade = new cv.CascadeClassifier();  // initialize classifier
 let utils = new Utils('errorMessage'); //use utils class
 
 let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml
+
+let detectionInterval = 500
 
 // use createFileFromUrl to "pre-build" the xml
 utils.createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
@@ -60,66 +49,7 @@ function startVideo() {
 }
 
 video.addEventListener('playing', () => {
-
-    // function animate() {
-    //   detect()
-    //   a = requestAnimationFrame(animate);
-    // }
-    //
-    //  animate()
-
-     setTimeout(detect, 1000);
-
-    // let video = document.getElementById('video');
-    // let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
-    // let dst = new cv.Mat(video.height, video.width, cv.CV_8UC4);
-    // let gray = new cv.Mat();
-    // let cap = new cv.VideoCapture(video);
-    // let faces = new cv.RectVector();
-    //
-    // const FPS = 30;
-    // function processVideo() {
-    //     let begin = Date.now();
-    //     // start processing.
-    //     cap.read(src);
-    //     src.copyTo(dst);
-    //     cv.cvtColor(dst, gray, cv.COLOR_RGBA2GRAY, 0);
-    //     // detect faces.
-    //     faceCascade.detectMultiScale(gray, faces, 1.1, 3, 0);
-    //     // draw faces.
-    //     for (let i = 0; i < faces.size(); ++i) {
-    //         let face = faces.get(i);
-    //         let point1 = new cv.Point(face.x, face.y);
-    //         let point2 = new cv.Point(face.x + face.width, face.y + face.height);
-    //         cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
-    //     }
-    //     cv.imshow('canvas', dst);
-    //     // schedule the next one.
-    //     let delay = 1000/FPS - (Date.now() - begin);
-    //     setTimeout(processVideo, delay);
-    //
-    // };
-    //
-    // // schedule the first one.
-    // setTimeout(processVideo, 0);
-
-  // console.log("detecting")
-  // const canvas = faceapi.createCanvasFromMedia(video)
-  // document.body.append(canvas)
-  // const displaySize = { width: video.width, height: video.height }
-  // faceapi.matchDimensions(canvas, displaySize)
-  // setInterval(async () => {
-  //   console.log("started async")
-  //   runDetection()
-  //   const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
-  //   // const resizedDetections = faceapi.resizeResults(detections, displaySize)
-  //   // console.log("head")
-  //   // console.log(resizedDetections)
-  //   //canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
-  //   // faceapi.draw.drawDetections(canvas, resizedDetections)
-  //   // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-  //   // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-  // }, 100)
+  setTimeout(detect, detectionInterval);
 })
 
 var last = false
@@ -135,9 +65,12 @@ function detect() {
 
         var intersecting = false
 
-        for(var i = 0; i < hands.length; i++) {
-          intersecting = intersecting || rectanglesIntersect(face[0], face[1], face[2], face[3], hands[i][0], hands[i][1], hands[i][2], hands[i][3])
+        if(face != []) {
+          for(var i = 0; i < hands.length; i++) {
+            intersecting = intersecting || rectanglesIntersect(face[0], face[1], face[2], face[3], hands[i][0], hands[i][1], hands[i][2], hands[i][3])
+          }
         }
+
 
         if(intersecting) {
           console.log("intersecting")
@@ -146,9 +79,8 @@ function detect() {
         }
 
         //send notification for not touching face
-
         if(last == true && intersecting == false) {
-          
+          run()
         }
 
         last = intersecting
@@ -167,7 +99,7 @@ function detect() {
         // ctx.beginPath();
         // ctx.rect(face[0], face[1], face[2], face[3]);
         // ctx.stroke();
-        setTimeout(detect, 1000);
+        setTimeout(detect, detectionInterval);
 
     });
 }
@@ -211,58 +143,55 @@ function detectFace() {
   return chosen
 }
 
+//code for sending a push notification
 
+// Hard-coded, replace with your public key
+const publicVapidKey = 'BDm5c3wc5O_dCtsQJg2qzZ8FNXYNHQrvUwO_dabEMYOlt_X_bOOX8ejxY0hczQ-bL4MaWW4CNQ0-a6Su2VOMrdk';
 
+async function run() {
+  console.log('Registering service worker');
+  const registration = await navigator.serviceWorker.
+    register('/scripts/worker.js');
+  console.log('Registered service worker');
 
-//
-// var handModel;
-//
-//   handTrack.load().then(model => {
-//     handModel = model
-//     const img = document.getElementById('img');
-//     alert("loaded")
-//
-//     handModel.detect(img).then(predictions => {
-//       console.log('Predictions: ', predictions);
-//     });
-//
-//     // Grab elements, create settings, etc.
-//     var video = document.getElementById('video');
-//
-//     // Get access to the camera!
-//     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-//       // Not adding `{ audio: true }` since we only want video now
-//       navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-//           //video.src = window.URL.createObjectURL(stream);
-//           video.srcObject = stream;
-//           video.play();
-//           animate()
-//       });
-//     }
-//
-//   });
-//
-//   function animate() {
-//     drawHands()
-//     predictHands()
-//     a = requestAnimationFrame(animate);
-//   }
-//
-//   function drawHands() {
-//     var ctx = document.getElementById('canvas').getContext('2d');
-//     var video = document.getElementById('video');
-//     ctx.drawImage(video, 0, 0, 640, 480);
-//   }
-//
-//   function predictHands() {
-//
-//     // var img = new Image();
-//     // var canvas = document.getElementById('canvas');
-//     // img.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
-//     // img.width = 640;
-//     // img.height = 480;
-//     //
-//     // handModel.detect(img).then(predictions => {
-//     //   console.log('Predictions: ', predictions);
-//     // });
-//   }
+  console.log('Registering push');
+  const subscription = await registration.pushManager.
+    subscribe({
+      userVisibleOnly: true,
+      // The `urlBase64ToUint8Array()` function is the same as in
+      // https://www.npmjs.com/package/web-push#using-vapid-key-for-applicationserverkey
+      applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+    });
+
+  console.log(subscription)
+  console.log('Registered push');
+
+  var sub_json = JSON.stringify(subscription)
+
+  console.log(sub_json)
+
+  console.log('Sending push');
+  await fetch('/alert', {
+    method: 'POST',
+    body: sub_json,
+    headers: {
+      'content-type': 'application/json'
+    }
+  });
+  console.log('Sent push');
+}
+
+function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding)
+    .replace(/-/g, '+')
+    .replace(/_/g, '/');
+
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
