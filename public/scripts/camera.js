@@ -13,7 +13,7 @@ let utils = new Utils('errorMessage'); //use utils class
 
 let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml
 
-let detectionInterval = 1000
+let detectionInterval = 500
 
 var loaded1 = false;
 var loaded2 = false;
@@ -177,8 +177,7 @@ function detect() {
           ctx.stroke();
         }
 
-        var ctx = document.getElementById('canvas').getContext('2d');
-        ctx.strokeStyle = "#0000ff";
+        ctx.strokeStyle = "#00ff00";
         ctx.beginPath();
         ctx.rect(face[0], face[1], face[2], face[3]);
         ctx.stroke();
