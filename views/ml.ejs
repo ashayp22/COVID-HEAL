@@ -36,7 +36,8 @@
       visibility: hidden
     }
 
-    video, #notify, #pause, #times, #secure {
+    video, #notify, #pause, #times, #secure, #lasttime {
+
       display: none;
       visibility: hidden;
     }
@@ -137,6 +138,8 @@
         <canvas id = "canvas" width = "400" height = "200"></canvas>
         <br>
         <p id = "times">So far, you have touched your face 0 times</p>
+        <br>
+        <p id = "lasttime">Last time, you touched your face 0 times</p>
         <br>
         <br>
         <input id = "pause" class = "myButton" type = "button" value = "Pause Video" onclick = "pauseVideo()">
