@@ -8,7 +8,6 @@
     <title>COVID-HEAL</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
-
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -37,6 +36,14 @@
     crossorigin="anonymous"></script>
 
   <script src="scripts/main.js"></script>
+
+  <script>
+
+    // if (location.protocol !== 'https:') {
+    //   location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    // }
+
+  </script>
 
   <!-- =======================================================
   * Template Name: Serenity - v2.0.0
@@ -72,11 +79,9 @@
                     <li><a href="/team">Team</a></li>
                 </ul>
             </li>
-
-
           <li class="get-started"><a
-                    href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093" target = "_blank">Take
-              a COVID-19 Test NOW!</a></li>
+                    href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093"
+                    target="_blank">Get tested!</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -113,7 +118,11 @@
 
               <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="count-box py-5">
+                  <<<<<<< HEAD
                   <!--<i class="icofont-ambulance"></i>-->
+                  =======
+                  <!-- <i class="icofont-document-folder"></i> -->
+                  >>>>>>> e3a5ada9d20c369ef8a9be57a4f07d43dd6a4773
                   <span data-toggle="counter-up" id="total_cases"></span>
                   <p>Cases</p>
                 </div>
@@ -121,7 +130,11 @@
 
               <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <<<<<<< HEAD
                   <!--<i class="icofont-skull-face"></i>-->
+                  =======
+                  <!-- <i class="icofont-simple-smile"></i> -->
+                  >>>>>>> e3a5ada9d20c369ef8a9be57a4f07d43dd6a4773
                   <span data-toggle="counter-up" id="total_deaths"></span>
                   <p>Deaths</p>
                 </div>
@@ -129,7 +142,11 @@
 
               <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
                 <div class="count-box pb-5 pt-0 pt-lg-5">
+                  <<<<<<< HEAD
                   <!--<i class="icofont-simple-smile"></i>-->
+                  =======
+                  <!-- <i class="icofont-award"></i> -->
+                  >>>>>>> e3a5ada9d20c369ef8a9be57a4f07d43dd6a4773
                   <span data-toggle="counter-up" id="total_recoveries"></span>
                   <p>Recoveries</p>
                 </div>
@@ -248,8 +265,6 @@
           <!-- Modal content -->
           <div class="modal-content">
             <p>Please input the following:</p>
-            <label for="name">Name:</label><br>
-              <input type="text" id="name" name="name" value=""><br>
               <label for="name">Location:</label><br>
                 <input type="text" id="location" name="location" value="" onkeyup = "updateLocation()"><br>
                 <p id = "state"></p>
@@ -287,8 +302,8 @@
               <li><a href="/home">Home</a></li>
               <li><a href="/team">About us</a></li>
               <li><a href="/camera">Services</a></li>
-              <li><a href="/termsofservice">Terms of service</a></li>
-              <li><a href="/privatepolicy">Privacy policy</a></li>
+              <li><a href="/termsofservice" target="_blank">Terms of service</a></li>
+              <li><a href="/privatepolicy" target="_blank">Privacy policy</a></li>
             </ul>
           </div>
 
