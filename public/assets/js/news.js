@@ -57,9 +57,11 @@ function callAPI(state) {
               console.log(news[i].images != null)
 
               if(news[i].images != null) {
-                div3.style.backgroundImage = "url(" + news[i].images[0].url + ")";
+                  div3.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(" + news[i].images[0].url + ")";
+
               } else {
-                div3.style.backgroundImage = "url(resources/covid.jpg)";
+                  div3.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(resources/covid.jpg)";
+
               }
 
               var header = document.createElement('h5');
