@@ -39,6 +39,14 @@ function loadHandTrack() {
 
 loadHandTrack()
 
+
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if(iOS) { //ios device
+  document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.";
+  document.getElementById('tryitout').style.visibility = "hidden";
+  document.getElementById('tryitout').style.display = "none";
+}
+
 function startVideo() {
 
   if(loaded1 == false || loaded2 == false) {
