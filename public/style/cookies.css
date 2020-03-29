@@ -30,7 +30,7 @@
     color: #FFF;
 }
 #cookieConsent a.cookieConsentOK {
-    background-color: #1226BD;
+    background-color: #94c045;
     color: #eee;
     display: inline-block;
     border-radius: 5px;
@@ -40,5 +40,5 @@
     margin: 0 60px 0 10px;
 }
 #cookieConsent a.cookieConsentOK:hover {
-    background-color: #0E1FA4;
+    background-color: #a6ca63;
 }
