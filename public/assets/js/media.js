@@ -1,6 +1,5 @@
+var text = [];
 var image = [];
-var toptext = [];
-var bottomText = [];
 
 var quotes = [];
 var authors = [];
@@ -71,33 +70,23 @@ function loadQuote() {
 }
 
 function loadMemes() {
-
-    $.getJSON("http://alpha-meme-maker.herokuapp.com/submissions", function (data) {
-        alert("wait waaaaat");
-        for (var i = 0; i < data.length; i++) {
-            alert("this is data length " + data.length);
-            toptext.push(data[i].topText);
-            bottomText.push(data[i].bottomText);
-            loadMemeImage(data[i].memeID);
+    $.getJSON("https://www.reddit.com/r/CoronavirusMemes.json", function (json) {
+        for (var i = 0; i < json.data.children.length; i++) {
+            //sets the first corona meme text
+            text.push(json.data.children[i].data.title);
+            //sets that meme's image
+            image.push(json.data.children[i].data.url);
         }
-    })
+    });
+
+
 }
-
-function loadMemeImage(id) {
-
-    $.getJSON("http://alpha-meme-maker.herokuapp.com/memes/" + id + "/", function (data) {
-        image.push(data.image);
-    })
-}
-
-
 
 
 function loadMemesOnPage() {
     loadMemes()
     alert(toptext[0])
     alert(bottomText[0])
-
 
 
     // var item = {
@@ -118,7 +107,6 @@ function loadMemesOnPage() {
     // var htmlString = template.join('');
     // var element = document.querySelector('.TxtTile');
     // element.innerHTML = htmlString;
-
 
 
 }
