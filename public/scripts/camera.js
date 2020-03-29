@@ -98,6 +98,7 @@ function pauseVideo() {
   } else {
     video.pause()
     video.currentTime = 0;
+    video.srcObject.getTracks()[0].stop();
     clearTimeout(timer);
     document.getElementById("pause").value = "Play Video";
   }
@@ -145,13 +146,13 @@ function detect() {
 
 
         if(intersecting) {
-          console.log("intersecting")
+          console.log("touching")
         } else {
           console.log("safe")
         }
 
         //send notification for not touching face
-        if(last == true && intersecting == false) {
+        if(last == false && intersecting == true) {
           times += 1;
 
           if(times == 1) {

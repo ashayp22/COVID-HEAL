@@ -7,6 +7,8 @@ const fs = require('fs');
 const path = require('path')
 const exec = require('child_process').exec;
 const webpush = require("web-push")
+const dotenv = require('dotenv');
+dotenv.config();
 
 const publicVapidKey = process.env.VAPID_PUBLIC_KEY;
 const privateVapidKey = process.env.VAPID_PRIVATE_KEY;
