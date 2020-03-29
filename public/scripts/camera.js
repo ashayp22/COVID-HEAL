@@ -39,6 +39,16 @@ function loadHandTrack() {
 
 loadHandTrack()
 
+
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if (iOS) { //ios device
+    document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.<br>If you are on a computer, you may need to visit the secure version of our website.";
+    document.getElementById('tryitout').style.visibility = "hidden";
+    document.getElementById('tryitout').style.display = "none";
+    document.getElementById('secure').style.visibility = "visible";
+    document.getElementById('secure').style.display = "inline";
+}
+
 function startVideo() {
 
   if(loaded1 == false || loaded2 == false) {
@@ -78,7 +88,7 @@ function startVideo() {
 
   setCookie("last_time", "0")
 
-  // List cameras and microphones.
+    // List cameras and microphones.
 
 //   navigator.mediaDevices.enumerateDevices()
 //   .then(function(devices) {
@@ -93,7 +103,7 @@ function startVideo() {
 
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" }}).then(function(stream) {
+      navigator.mediaDevices.getUserMedia({video: {facingMode: "user"}}).then(function (stream) {
         //video.src = window.URL.createObjectURL(stream);
         video.srcObject = stream;
         video.play();
@@ -261,10 +271,19 @@ const publicVapidKey = 'BDm5c3wc5O_dCtsQJg2qzZ8FNXYNHQrvUwO_dabEMYOlt_X_bOOX8ejx
 var registration;
 
 async function registerPush() {
-  console.log('Registering service worker');
-  registration = await navigator.serviceWorker.
-    register('/scripts/worker.js');
-  console.log('Registered service worker');
+
+    if ('serviceWorker' in navigator) {
+
+        console.log('Registering service worker');
+        registration = await navigator.serviceWorker.register('/scripts/worker.js');
+        console.log('Registered service worker');
+    } else {
+        document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.<br>If you are on a computer, you may need to visit the secure version of our website.";
+        document.getElementById('tryitout').style.visibility = "hidden";
+        document.getElementById('tryitout').style.display = "none";
+        document.getElementById('secure').style.visibility = "visible";
+        document.getElementById('secure').style.display = "inline";
+    }
 }
 
 registerPush()

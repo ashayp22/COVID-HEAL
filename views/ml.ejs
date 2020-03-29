@@ -36,7 +36,8 @@
       visibility: hidden
     }
 
-    video, #notify, #pause, #times, #lasttime {
+    video, #notify, #pause, #times, #secure, #lasttime {
+
       display: none;
       visibility: hidden;
     }
@@ -47,6 +48,14 @@
   <link href="style/main.css" rel="stylesheet">
 
   <script src="scripts/main.js"></script>
+
+  <script>
+
+    // if (location.protocol !== 'https:') {
+    //   location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    // }
+
+  </script>
 
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
   <script src="handtrack.min.js"></script>
@@ -89,8 +98,8 @@
 
 
           <li class="get-started"><a
-                    href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093" target = "_blank">Take
-              a COVID-19 Test TODAY!</a></li>
+                    href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093"
+                    target="_blank">Get tested!</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -121,6 +130,8 @@
           <br>Whether you're on a Zoom call, emailing a co-worker, or watching Netflix, we have you covered.
           <br><br>Click below to try it out!</h3>
 
+          <p id="notworking"></p>
+          <a href="https://www.covidheal.org/camera" id="secure">Visit the secure website</a>
         <input id = "tryitout" class = "myButton" type = "button" value = "Loading Models..." onclick = "startVideo()">
 
         <video id="video" width="400" height="200"></video>
@@ -178,8 +189,8 @@
               <li><a href="/home">Home</a></li>
               <li><a href="/team">About us</a></li>
               <li><a href="/camera">Services</a></li>
-              <li><a href="/termsofservice">Terms of service</a></li>
-              <li><a href="/privatepolicy">Privacy policy</a></li>
+              <li><a href="/termsofservice" target="_blank">Terms of service</a></li>
+              <li><a href="/privatepolicy" target="_blank">Privacy policy</a></li>
             </ul>
           </div>
 
@@ -207,7 +218,8 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/serenity-bootstrap-corporate-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">Labdhi Jain, Ashay Parikh, Sohum Bhole<br> S/O to BootstrapMade</a>
+        Developed by <a href="https://bootstrapmade.com/">Labdhi Jain, Ashay Parikh, Sohum Bhole<br> S/O to
+          BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
