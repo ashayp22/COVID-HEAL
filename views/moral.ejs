@@ -30,6 +30,14 @@
   <link href="style/modal.css" rel="stylesheet">
 
   <script src="scripts/main.js"></script>
+
+  <script>
+
+  if (location.protocol !== 'https:') {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
+  }
+
+  </script>
   <!-- =======================================================
   * Template Name: Serenity - v2.0.0
   * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
