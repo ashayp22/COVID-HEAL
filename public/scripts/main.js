@@ -23,8 +23,6 @@ function setCookie(cname, cvalue, exdays) {
 
 
 function submit() {
-  var name = document.getElementById("name").value;
-
   //error
 
   var err = ""
@@ -37,9 +35,6 @@ function submit() {
   //   err += "That is not a phone number, please try again."
   // }
 
-  if(name == "") {
-    err += "Please enter a name."
-  }
 
   if(code == "") {
     err += " Please select a location."
@@ -53,7 +48,6 @@ function submit() {
     //set cookies and redirect to home
 
     setCookie("user", "yes", 365)
-    setCookie("name", name, 365)
     setCookie("code", code, 365)
 
     closeModal()
