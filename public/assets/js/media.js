@@ -22,19 +22,52 @@ function loadQuote() {
 
 
     })
+
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote7").innerHTML = data.quoteText;
+        document.getElementById("author7").innerHTML = data.quoteAuthor;
+
+
+    })
+
+
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote5").innerHTML = data.quoteText;
+        document.getElementById("author5").innerHTML = data.quoteAuthor;
+
+    })
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote6").innerHTML = data.quoteText;
+        document.getElementById("author6").innerHTML = data.quoteAuthor;
+
+    })
+
     $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
 
         document.getElementById("quote3").innerHTML = data.quoteText;
         document.getElementById("author3").innerHTML = data.quoteAuthor;
 
-
     })
-    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
 
-        document.getElementById("quote4").innerHTML = data.quoteText;
-        document.getElementById("author4").innerHTML = data.quoteAuthor;
 
-    })
+    // for(i= 0; i< 3;i++){
+    //     alert("hello world")
+    //     $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+    //         document.getElementById("quote" + (i+1).toString()).innerHTML = data.quoteText;
+    //             document.getElementById("author"+(i+1).toString()).innerHTML = data.quoteAuthor;
+    //
+    //     })
+    //
+    //
+    //
+    //
+    //
+    // }
+
+
 }
 
 function loadMemes() {
@@ -91,9 +124,8 @@ function loadMemesOnPage() {
 }
 
 function loadQuotesOnPage(){
-    loadQuote();
 
-    document.getElementById("quote1").innerHTML = quotes[0];
+    loadQuote();
 
 
     // for(i=1;i<5;i++){
