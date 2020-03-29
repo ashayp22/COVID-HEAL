@@ -4,10 +4,34 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+    }
+}
 
+.action {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 25px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+    animation: shadow-pulse 1s infinite;
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -85,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-scrolled {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
+
 
 #header .logo h1 {
   font-size: 28px;
@@ -193,6 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: IcoFont;
   padding-left: 5px;
 }
+
 
 .nav-menu .drop-down .drop-down ul {
   top: 0;
