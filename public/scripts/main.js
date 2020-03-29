@@ -594,12 +594,22 @@ function updateLocation() {
   var closest = -1;
   code = ""
 
+  var length = 10000000;
+
   for(var i = 0; i < region.length; i++) {
     var d = stringDistance2(current, region[i]);
     if (d > closest) {
       index = i;
       closest = d;
       code = region_codes[i]
+      length = region[i].length
+    } else if(d === closest) {
+      if(length > region[i].length) {
+        index = i;
+        closest = d;
+        code = region_codes[i]
+        length = region[i].length
+      }
     }
   }
   console.log(closest)
