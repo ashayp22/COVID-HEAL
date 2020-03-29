@@ -55,13 +55,9 @@ function callAPI(state) {
               div3.className = "card-body"
 
               if(news[i].images != null) {
-                div3.style.backgroundImage = "url(" + news[i].images[0].url + ")";
-                var img = document.createElement("img");
-                img.src = news[i].images[0].url
-                console.log(img.src)
-                console.log(getAverageRGB(img))
+                div3.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(" + news[i].images[0].url + ")";
               } else {
-                div3.style.backgroundImage = "url(resources/covid.jpg)";
+                div3.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(resources/covid.jpg)";
               }
 
               var header = document.createElement('h5');
@@ -83,6 +79,8 @@ function callAPI(state) {
               a.title = "Read More";
               a.href = news[i].webUrl;
               a.target = "_blank"
+              a.style.color = "white"
+
 
               var arrow = document.createElement('i');
               arrow.className = "icofont-arrow-right"
@@ -121,6 +119,7 @@ function getAverageRGB(imgEl) {
         count = 0;
 
     if (!context) {
+      console.log("a")
         return defaultRGB;
     }
 
@@ -133,6 +132,7 @@ function getAverageRGB(imgEl) {
         data = context.getImageData(0, 0, width, height);
     } catch(e) {
         /* security error, img on diff domain */
+        console.log(e)
         return defaultRGB;
     }
 
