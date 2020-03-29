@@ -13,7 +13,7 @@ let utils = new Utils('errorMessage'); //use utils class
 
 let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml
 
-let detectionInterval = 1000
+let detectionInterval = 500
 
 var loaded1 = false;
 var loaded2 = false;
@@ -168,20 +168,19 @@ function detect() {
 
         last = intersecting
 
-        // var ctx = document.getElementById('canvas').getContext('2d');
-        // ctx.strokeStyle = "#0000ff";
-        //
-        // for(var i = 0; i < hands.length; i++) {
-        //   ctx.beginPath();
-        //   ctx.rect(hands[i][0], hands[i][1], hands[i][2], hands[i][3]);
-        //   ctx.stroke();
-        // }
-        //
-        // var ctx = document.getElementById('canvas').getContext('2d');
-        // ctx.strokeStyle = "#0000ff";
-        // ctx.beginPath();
-        // ctx.rect(face[0], face[1], face[2], face[3]);
-        // ctx.stroke();
+        var ctx = document.getElementById('canvas').getContext('2d');
+        ctx.strokeStyle = "#0000ff";
+
+        for(var i = 0; i < hands.length; i++) {
+          ctx.beginPath();
+          ctx.rect(hands[i][0], hands[i][1], hands[i][2], hands[i][3]);
+          ctx.stroke();
+        }
+
+        ctx.strokeStyle = "#00ff00";
+        ctx.beginPath();
+        ctx.rect(face[0], face[1], face[2], face[3]);
+        ctx.stroke();
         timer = setTimeout(detect, detectionInterval);
 
     });

@@ -80,6 +80,7 @@ function callAPI(state) {
               a.appendChild(link);
               a.title = "Read More";
               a.href = news[i].webUrl;
+              a.target = "_blank"
 
               var arrow = document.createElement('i');
               arrow.className = "icofont-arrow-right"
