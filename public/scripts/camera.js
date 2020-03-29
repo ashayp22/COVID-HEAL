@@ -255,10 +255,16 @@ const publicVapidKey = 'BDm5c3wc5O_dCtsQJg2qzZ8FNXYNHQrvUwO_dabEMYOlt_X_bOOX8ejx
 var registration;
 
 async function registerPush() {
+
+  if ('serviceWorker' in navigator) {
+
   console.log('Registering service worker');
   registration = await navigator.serviceWorker.
     register('/scripts/worker.js');
   console.log('Registered service worker');
+  } else {
+    console.log("no service worked");
+  }
 }
 
 registerPush()
