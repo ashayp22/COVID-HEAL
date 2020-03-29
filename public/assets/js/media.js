@@ -51,6 +51,14 @@ function loadQuote() {
 
     })
 
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function (data) {
+
+        document.getElementById("quote8").innerHTML = data.quoteText;
+        document.getElementById("author8").innerHTML = data.quoteAuthor;
+
+    })
+
+
 
     // for(i= 0; i< 3;i++){
     //     alert("hello world")
