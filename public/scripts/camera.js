@@ -42,7 +42,7 @@ loadHandTrack()
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if(iOS) { //ios device
-  document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.";
+  document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.<br>If you are on a computer, you may need to visit the secure version of our website (https)";
   document.getElementById('tryitout').style.visibility = "hidden";
   document.getElementById('tryitout').style.display = "none";
 }
@@ -263,7 +263,7 @@ async function registerPush() {
     register('/scripts/worker.js');
   console.log('Registered service worker');
   } else {
-    document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.";
+    document.getElementById("notworking").innerHTML = "This device doesn't support the feature, please try it on a computer.<br>If you are on a computer, you may need to visit the secure version of our website (https)";
     document.getElementById('tryitout').style.visibility = "hidden";
     document.getElementById('tryitout').style.display = "none";
   }
