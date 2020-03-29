@@ -75,6 +75,18 @@ function startVideo() {
   document.getElementById('times').style.visibility = "visible";
   document.getElementById('times').style.display = "inline";
 
+  document.getElementById('lasttime').style.visibility = "visible";
+  document.getElementById('lasttime').style.display = "inline";
+
+  var times = parseInt(getCookie("last_time"));
+
+  if(times == 1) {
+    document.getElementById("lasttime").innerHTML = "Last time, you touched your face " + times + " time";
+  } else {
+    document.getElementById("lasttime").innerHTML = "Last time, you touched your face " + times + " times";
+  }
+
+  setCookie("last_time", "0")
 
     // List cameras and microphones.
 
@@ -184,6 +196,8 @@ function detect() {
           } else {
             document.getElementById("times").innerHTML = "So far, you have touched your face " + times + " times";
           }
+
+          setCookie("last_time", parseInt(getCookie("last_time")) + 1)
 
           if(sending) {
             run()
@@ -316,4 +330,35 @@ function urlBase64ToUint8Array(base64String) {
     outputArray[i] = rawData.charCodeAt(i);
   }
   return outputArray;
+}
+
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+//keeping track
+
+//cases: haven't set, new day
+
+if(getCookie("last_time") == "") {
+  setCookie("last_time", "0");
 }

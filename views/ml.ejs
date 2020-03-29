@@ -36,7 +36,8 @@
       visibility: hidden
     }
 
-    video, #notify, #pause, #times, #secure {
+    video, #notify, #pause, #times, #secure, #lasttime {
+
       display: none;
       visibility: hidden;
     }
@@ -47,6 +48,17 @@
   <link href="style/main.css" rel="stylesheet">
 
   <script src="scripts/main.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155101938-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155101938-2');
+</script>
+
 
   <script>
 
@@ -137,6 +149,8 @@
         <canvas id = "canvas" width = "400" height = "200"></canvas>
         <br>
         <p id = "times">So far, you have touched your face 0 times</p>
+        <br>
+        <p id = "lasttime">Last time, you touched your face 0 times</p>
         <br>
         <br>
         <input id = "pause" class = "myButton" type = "button" value = "Pause Video" onclick = "pauseVideo()">
