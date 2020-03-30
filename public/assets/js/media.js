@@ -119,13 +119,49 @@ function loadMemesOnPage() {
 
 }
 
+function get_url_extension( url ) {
+    return url.split(/\#|\?/)[0].split('.').pop().trim();
+}
+
+function loadMemes() {
+    $.getJSON("https://www.reddit.com/r/CoronavirusMemes.json", function(json) {
+
+
+      var max = 10;
+      var i = 0;
+      var count = 0;
+
+      while(i < max) {
+
+        var title = json.data.children[count].data.title;
+        var url = json.data.children[count].data.url;
+
+        while(!(get_url_extension(url) == "jpg" || get_url_extension(url) == "png" || get_url_extension(url) == "jpeg")) {
+          count++;
+          title = json.data.children[count].data.title;
+          url = json.data.children[count].data.url;
+        }
+
+        document.getElementById("meme" + (i+1)).src = url;
+        document.getElementById("memetitle" + (i+1)).innerHTML = title;
+
+        count++;
+        i++;
+      }
+
+    });
+}
+
+function t() {
+  $('#portfolio-flters li:nth-child(1)').click();
+  console.log("a")
+}
+
 function loadQuotesOnPage(){
 
     loadQuote();
+    loadMemes();
 
-
-    // for(i=1;i<5;i++){
-    //     document.getElementById("quote" + i.toString()).innerHTML = quotes[i];
-    //     document.getElementById("author" + i.toString()).innerHTML = authors[i];
-    // }
+    setTimeout(t, 500)
+    // $grid.isotope({ filter: '*' });
 }

@@ -30,6 +30,13 @@
   <link href="../assets/css/style.css" rel="stylesheet">
   <link href="style/modal.css" rel="stylesheet">
 
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
   <script src="scripts/main.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -46,9 +53,9 @@
 
   <script>
 
-    if (location.protocol !== 'https:') {
-      location.replace(`https:${location.href.substring(location.protocol.length)}`);
-    }
+    // if (location.protocol !== 'https:') {
+    //   location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    // }
 
   </script>
   <!-- =======================================================
@@ -119,7 +126,7 @@
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter="*" id = "all" class="filter-active">All</li>
               <li data-filter=".filter-app">Lighten Your Mood</li>
               <li data-filter=".filter-card">Motivate Yourself</li>
               <li data-filter=".filter-web">Healing Music</li>
@@ -132,16 +139,10 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme1.png" class="img-fluid" alt="">
-              <!--<h4>Quote 1</h4>-->
-              <!--<div class="card-text">-->
-              <!--<h4>App 1</h4>-->
-              <!--<p>App</p>-->
-              <!--&lt;!&ndash;<div class="portfolio-links">&ndash;&gt;-->
-              <!--&lt;!&ndash;<a href="../assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>&ndash;&gt;-->
-              <!--&lt;!&ndash;<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--</div>-->
+              <img src= "" id = "meme1" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4 id = "memetitle1"></h4>
+              </div>
             </div>
           </div>
 
@@ -167,14 +168,9 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme3.jpg" class="img-fluid" alt="">
+              <img src= "" id = "meme2" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <!--<div class="portfolio-links">-->
-                  <!--<a href="../assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>-->
-                  <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
+                <h4 id = "memetitle2"></h4>
               </div>
             </div>
           </div>
@@ -215,14 +211,9 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme5.jpg" class="img-fluid" alt="">
+              <img src= "" id = "meme3" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <!--<div class="portfolio-links">-->
-                  <!--<a href="../assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>-->
-                  <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
+                <h4 id = "memetitle3"></h4>
               </div>
             </div>
           </div>
@@ -281,12 +272,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme2.jpg" class="img-fluid" alt="">
-
+              <img src= "" id = "meme4" class="img-fluid" alt="">
               <div class="portfolio-info">
+                <h4 id = "memetitle4"></h4>
+              </div>
             </div>
           </div>
-        </div>
 
 
             <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
@@ -330,6 +321,15 @@
               </div>
             </div>
 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme5" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle5"></h4>
+                </div>
+              </div>
+            </div>
+
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-wrap">
 
@@ -339,6 +339,16 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme6" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle6"></h4>
+                </div>
+              </div>
+            </div>
+
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-wrap">
@@ -350,6 +360,16 @@
               </div>
             </div>
 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme7" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle7"></h4>
+                </div>
+              </div>
+            </div>
+
+
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-wrap">
 
@@ -359,6 +379,36 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme8" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle8"></h4>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme9" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle9"></h4>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme10" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle10"></h4>
+                </div>
+              </div>
+            </div>
+
 
 
         </div>
@@ -372,7 +422,6 @@
         <div class="row">
           <div class="col-md-6">
             <div class="icon-box" data-aos="fade-up">
-              <!--<div class="icon"><i class="las la-basketball-ball" style="color: #ff689b;"></i></div>-->
               <h4 class="title"><a href="">Things to do at home:</a></h4>
               <p class="description">One Doctor who recovered from the coronavirus and recovered in double quick time had
                 inhaled Steam.
