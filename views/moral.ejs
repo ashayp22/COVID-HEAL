@@ -8,6 +8,7 @@
   <title>COVID-HEAL</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+<meta name="google-site-verification" content="_Hn1oHzeYV6GNDiZk1dFGrGvCdw6FPTNb5TZgjhL8CI"/>
 
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
@@ -29,24 +30,32 @@
   <link href="../assets/css/style.css" rel="stylesheet">
   <link href="style/modal.css" rel="stylesheet">
 
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
   <script src="scripts/main.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155101938-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162159476-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-155101938-2');
-</script>
+    gtag('config', 'UA-162159476-1');
+  </script>
+
 
 
   <script>
 
-    // if (location.protocol !== 'https:') {
-    //   location.replace(`https:${location.href.substring(location.protocol.length)}`);
-    // }
+    if (location.protocol !== 'https:') {
+      location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    }
 
   </script>
   <!-- =======================================================
@@ -76,21 +85,10 @@
             <li><a href="/news">Current News</a></li>
             <li class="active"><a href="/relax">Relax</a></li>
             <li onclick = "showModal()"><a>Change Info</a></li>
-            <!--<li><a href="blog.html">Blog</a></li>-->
-            <!--<li><a href="contact.html">Contact</a></li>-->
             <li class="drop-down"><a href="#">About</a>
                 <ul>
                     <li><a href="/team">Team</a></li>
 
-                    <!--<li class="drop-down"><a href="#">Drop Down 2</a>-->
-                    <!--<ul>-->
-                    <!--<li><a href="#">Deep Drop Down 1</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 2</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 3</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 4</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 5</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
                 </ul>
             </li>
 
@@ -112,7 +110,9 @@
           <div class="breadcrumb-hero">
             <h2>Relax Your Mind</h2>
             <p>It is scientifically proven that being more relaxed will lead to a quicker recovery. And there is a less
-              likely chance for you to get a disease if you have a relaxed mind!</div>
+              likely chance for you to get a disease if you have a relaxed mind!</p>
+              <a href = "#services" style = "color: white">Click see to helpful precautions </a>
+            </div>
         </div>
       </div>
 
@@ -126,7 +126,7 @@
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter="*" id = "all" class="filter-active">All</li>
               <li data-filter=".filter-app">Lighten Your Mood</li>
               <li data-filter=".filter-card">Motivate Yourself</li>
               <li data-filter=".filter-web">Healing Music</li>
@@ -135,20 +135,14 @@
         </div>
 
         <!--hello-->
-        <div class="row portfolio-container" data-aos="fade-up" id="all_relax">
+        <div class="row portfolio-container" data-aos="fade-up">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap" id="meme1">
-              <img src="../assets/img/meme1.png" class="img-fluid" alt="">
-              <!--<h4>Quote 1</h4>-->
-              <!--<div class="card-text">-->
-              <!--<h4>App 1</h4>-->
-              <!--<p>App</p>-->
-              <!--&lt;!&ndash;<div class="portfolio-links">&ndash;&gt;-->
-              <!--&lt;!&ndash;<a href="../assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>&ndash;&gt;-->
-              <!--&lt;!&ndash;<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--</div>-->
+            <div class="portfolio-wrap">
+              <img src= "" id = "meme1" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4 id = "memetitle1"></h4>
+              </div>
             </div>
           </div>
 
@@ -174,14 +168,9 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme3.jpg" class="img-fluid" alt="">
+              <img src= "" id = "meme2" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <!--<div class="portfolio-links">-->
-                  <!--<a href="../assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>-->
-                  <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
+                <h4 id = "memetitle2"></h4>
               </div>
             </div>
           </div>
@@ -222,41 +211,9 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme5.jpg" class="img-fluid" alt="">
+              <img src= "" id = "meme3" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4></h4>
-                <p></p>
-                <!--<div class="portfolio-links">-->
-                  <!--<a href="../assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>-->
-                  <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-
-              <div class="card-text" style="color:white">
-                <h4 id="quote5"></h4>
-                <p id="author5"></p>
-                <!--<div class="portfolio-links">-->
-                <!--<a href="../assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>-->
-                <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-
-              <div class="card-text" style="color:white">
-                <h4 id="quote6"></h4>
-                <p id="author6"></p>
-                <!--<div class="portfolio-links">-->
-                <!--<a href="../assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>-->
-                <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
+                <h4 id = "memetitle3"></h4>
               </div>
             </div>
           </div>
@@ -315,33 +272,24 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../assets/img/meme2.jpg" class="img-fluid" alt="">
-
+              <img src= "" id = "meme4" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <!--<div class="portfolio-links">-->
-                  <!--<a href="../assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>-->
-                  <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                <!--</div>-->
-              <!--</div>-->
+                <h4 id = "memetitle4"></h4>
+              </div>
             </div>
           </div>
 
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
               <div class="portfolio-wrap">
 
                 <div class="card-text" style="color:white">
-                  <h4 id="quote7"></h4>
-                  <p id="author7"></p>
-                  <!--<div class="portfolio-links">-->
-                  <!--<a href="../assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>-->
-                  <!--<a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>-->
-                  <!--</div>-->
+                  <h4 id="quote4"></h4>
+                  <p id="author4"></p>
+
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!--This is a healer-->
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -363,62 +311,134 @@
               </div>
             </div>
 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
 
-          </div>
-          <!--<div class="col-lg-4 col-md-6 portfolio-item filter-web">-->
-          <!--<div class="portfolio-wrap">-->
-          <!--<img alt="" class="img-fluid" src="../assets/img/corona2.jpg" style=" max-width: 100%;-->
-          <!--max-height: 50%;">-->
-          <!--<div class="portfolio-info">-->
-          <!--<h4>You Can Do This At Home</h4>-->
-          <!--<p>Physical and mental healing</p>-->
-          <!--<div class="portfolio-links">-->
-          <!--<a class="venobox" data-autoplay="true" data-gall="portfolioGallery" data-vbtype="video"-->
-          <!--href="https://www.youtube.com/watch?v=K6qVB2s36vg" title="Web 3"><i class="bx bx-play-circle"></i></a>-->
-          <!--&lt;!&ndash;<a href="https://youtu.be/9cfYC4YLsu4" data-autoplay="true" data-vbtype="video" title="Play the music"><i class="bx bx-link"></i></a>&ndash;&gt;-->
-          <!--&lt;!&ndash;<a class="venobox play-btn mb-4" data-autoplay="true" data-vbtype="video"&ndash;&gt;-->
-          <!--&lt;!&ndash;href="https://youtu.be/9cfYC4YLsu4"></a>&ndash;&gt;-->
-          <!--</div>-->
-          <!--</div>-->
+                <div class="card-text" style="color:white">
+                  <h4 id="quote5"></h4>
+                  <p id="author5"></p>
+                </div>
+              </div>
+            </div>
 
-          <!--</div>-->
-          <!--</div>-->
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme5" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle5"></h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+
+                <div class="card-text" style="color:white">
+                  <h4 id="quote6"></h4>
+                  <p id="author6"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme6" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle6"></h4>
+                </div>
+              </div>
+            </div>
 
 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
+
+                <div class="card-text" style="color:white">
+                  <h4 id="quote7"></h4>
+                  <p id="author7"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme7" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle7"></h4>
+                </div>
+              </div>
+            </div>
 
 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+              <div class="portfolio-wrap">
 
+                <div class="card-text" style="color:white">
+                  <h4 id="quote8"></h4>
+                  <p id="author8"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme8" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle8"></h4>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme9" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle9"></h4>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <img src= "" id = "meme10" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4 id = "memetitle10"></h4>
+                </div>
+              </div>
+            </div>
 
 
 
         </div>
       </div>
     </section><!-- End Portfolio Section -->
-
+    <br>
+<br><br><br>
 
     <section id="services" class="services ">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="icon-box" data-aos="fade-up">
-              <!--<div class="icon"><i class="las la-basketball-ball" style="color: #ff689b;"></i></div>-->
-              <h4 class="title"><a href="">Things to do at home:</a></h4>
-              <p class="description">Our Doctor who recovered from Corona illness and recovered in double quick time had
+              <h4 class="title"><a href="">According to a social media post on remedies:</a></h4>
+              <p class="description">One Doctor who recovered from the coronavirus and recovered in double quick time had
                 inhaled Steam.
-                The doctors at IDH Corona centre too are continually inhaling steam.
-
+                The doctors at a Corona center too are continually inhaling steam.
+                <br><br>
                 Steaming raises the temperature of lungs, throat and mouth so that if the virus is already there it gets
                 inactivate due to high temperature.
-
-                Yes that’s true as viruses sit in the throat first.
-
+<br><br>
+                That’s true as viruses sit in the throat first.
+<br><br>
                 That’s why even if there is someone sneezing in your office and you come home and inhale and gargle with
                 warm water and salt, usually you will not get the flu.
-
-                I recommend for everyone who is able to do it -
-                1. Use steam inhalation everyday - morning and evening if possible,
+<br> <br>
+                I recommend for everyone who is able to do it<br>
+                1.Use steam inhalation everyday - morning and evening if possible.<br>
                 2. Gargle with warm water and salt daily - morning and evening if possible.
-
+                <br><br>
                 This is a good daily practice which will improve your overall well-being and can be continued even after
                 COVID-19 ends.
 
@@ -511,10 +531,8 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              700 East Cougar Trail <br>
-              Hoffman Estates, IL<br>
-              United States <br>
               <strong>Email:</strong> covid19heal@gmail.com<br>
+              Powered by NewsAPI.org, Smartable, & Forismatic
             </p>
 
           </div>
