@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a5b6cd9-e794-4604-a19b-eb682b8d5ef8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/img/nurse_pic.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/moral.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/moral.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/team.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/team.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,16 +24,16 @@
         <entry file="file://$PROJECT_DIR$/views/news.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1984">
-              <caret line="230" column="17" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
+              <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/moral.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="157">
-              <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+              <caret line="140" column="49" selection-start-line="140" selection-start-column="49" selection-end-line="140" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,6 +53,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/team.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="138" column="42" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/img/corona2.jpg">
           <provider selected="true" editor-type-id="images" />
@@ -68,19 +76,7 @@
         <entry file="file://$PROJECT_DIR$/views/ml.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
-              <caret line="217" column="17" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
-              <folding>
-                <element signature="e#11370#11376#0#HTML" expanded="true" />
-              </folding>
+              <caret line="231" column="17" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -139,7 +135,6 @@
       <find>close</find>
       <find>author2</find>
       <find>app</find>
-      <find>meme</find>
       <find>labd</find>
       <find>info@example</find>
       <find>pulse</find>
@@ -150,6 +145,7 @@
       <find>all_relax</find>
       <find>quote5</find>
       <find>https://www.youtube.com/watch?v=K6qVB2s36vg</find>
+      <find>meme</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,11 +193,11 @@
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
         <option value="$PROJECT_DIR$/views/ml.ejs" />
         <option value="$PROJECT_DIR$/views/news.ejs" />
-        <option value="$PROJECT_DIR$/views/team.ejs" />
         <option value="$PROJECT_DIR$/views/home.ejs" />
         <option value="$PROJECT_DIR$/public/assets/js/news.js" />
         <option value="$PROJECT_DIR$/public/assets/js/media.js" />
         <option value="$PROJECT_DIR$/views/moral.ejs" />
+        <option value="$PROJECT_DIR$/views/team.ejs" />
       </list>
     </option>
   </component>
@@ -327,7 +323,7 @@
       <workItem from="1585251166557" duration="23481000" />
       <workItem from="1585341750882" duration="1856000" />
       <workItem from="1585351384689" duration="2429000" />
-      <workItem from="1585355713260" duration="32598000" />
+      <workItem from="1585355713260" duration="33932000" />
     </task>
     <task id="LOCAL-00001" summary="FrontEnd template">
       <created>1585260104013</created>
@@ -581,18 +577,25 @@
       <option name="project" value="LOCAL" />
       <updated>1585507495649</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="add morals last">
+      <created>1585520803541</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1585520803541</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60364000" />
+    <option name="totallyTimeSpent" value="61698000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="569" y="0" width="871" height="900" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.50089765" side_tool="true" weight="0.24947146" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.497307" visible="true" weight="0.19450317" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.497307" visible="true" weight="0.32470587" />
       <window_info id="Structure" order="3" sideWeight="0.502693" side_tool="true" weight="0.19450317" />
       <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.28674698" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -680,7 +683,8 @@
     <MESSAGE value="pulse Button final" />
     <MESSAGE value="Front end edits" />
     <MESSAGE value="Merge branch 'master' of https://github.com/ashayp22/COVID-19-Global-Hackathon-App&#10;&#10;# Conflicts:&#10;#&#9;public/assets/js/news.js&#10;#&#9;views/home.ejs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/ashayp22/COVID-19-Global-Hackathon-App&#10;&#10;# Conflicts:&#10;#&#9;public/assets/js/news.js&#10;#&#9;views/home.ejs" />
+    <MESSAGE value="add morals last" />
+    <option name="LAST_COMMIT_MESSAGE" value="add morals last" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -831,17 +835,10 @@
     <entry file="file://$PROJECT_DIR$/views/policy.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/team.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="311" lean-forward="true" selection-start-line="311" selection-end-line="311" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
-          <caret line="109" column="48" selection-start-line="109" selection-start-column="48" selection-end-line="109" selection-end-column="48" />
+          <caret line="120" column="48" selection-start-line="120" selection-start-column="48" selection-end-line="120" selection-end-column="48" />
           <folding>
             <element signature="e#11370#11376#0#HTML" expanded="true" />
           </folding>
@@ -851,14 +848,14 @@
     <entry file="file://$PROJECT_DIR$/views/news.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1984">
-          <caret line="230" column="17" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="17" />
+          <caret line="241" column="17" selection-start-line="241" selection-start-column="17" selection-end-line="241" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/ml.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="217" column="17" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="17" />
+          <caret line="231" column="17" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -899,7 +896,7 @@
     <entry file="file://$PROJECT_DIR$/views/moral.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
-          <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+          <caret line="140" column="49" selection-start-line="140" selection-start-column="49" selection-end-line="140" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#section#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -915,6 +912,13 @@
             <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/team.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="138" column="42" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
         </state>
       </provider>
     </entry>
