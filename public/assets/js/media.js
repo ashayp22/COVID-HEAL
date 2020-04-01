@@ -149,6 +149,7 @@ function loadMemes() {
         i++;
       }
 
+      t();
     });
 }
 
