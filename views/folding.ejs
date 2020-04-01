@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>News - COVID-HEAL</title>
+  <title>Folding@Home - COVID-HEAL</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 <meta name="google-site-verification" content="_Hn1oHzeYV6GNDiZk1dFGrGvCdw6FPTNb5TZgjhL8CI"/>
@@ -28,6 +28,9 @@
 
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
+
+
+  <link href="../assets/css/style.css" rel="stylesheet">
   <link href="style/modal.css" rel="stylesheet">
 
   <script src="scripts/main.js"></script>
@@ -43,23 +46,19 @@
   </script>
 
 
+    <script>
 
-  <script>
+      if (location.protocol !== 'https:') {
+        location.replace(`https:${location.href.substring(location.protocol.length)}`);
+      }
 
-    if (location.protocol !== 'https:') {
-      location.replace(`https:${location.href.substring(location.protocol.length)}`);
-    }
+    </script>
 
-  </script>
-  <!-- =======================================================
-  * Template Name: Serenity - v2.0.0
-  * Template URL: https://bootstrapmade.com/serenity-bootstrap-corporate-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
+
 </head>
 
-<body onload="getNews()">
+<body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -75,30 +74,20 @@
         <ul>
           <li><a href="/home">Home</a></li>
             <li><a href="/camera">Face Touch Reminder</a></li>
-            <li class="active"><a href="/news">Current News</a></li>
+            <li><a href="/news">Current News</a></li>
             <li><a href="/relax">Relax</a></li>
+            <li><a href="/foldingathome">Help Out</a></li>
             <li onclick = "showModal()"><a>Change Info</a></li>
-            <!--<li><a href="blog.html">Blog</a></li>-->
-            <!--<li><a href="contact.html">Contact</a></li>-->
             <li class="drop-down"><a href="#">About</a>
                 <ul>
-                    <li><a href="/team">Team</a></li>
-
-                    <!--<li class="drop-down"><a href="#">Drop Down 2</a>-->
-                    <!--<ul>-->
-                    <!--<li><a href="#">Deep Drop Down 1</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 2</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 3</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 4</a></li>-->
-                    <!--<li><a href="#">Deep Drop Down 5</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
+                    <li class="active"><a href="/team">Team</a></li>
                 </ul>
             </li>
 
-            <!-- <li class="get-started"><a
-                      href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093"
-                      target="_blank">Get tested!</a></li> -->
+          <!-- <li class="get-started"><a
+                    href="https://baseline.google.com/enroll/begin/covid19mtch?_ga=2.64073896.641749093.1585415093-474750.1585415093"
+                    target="_blank">Get tested!</a></li> -->
+
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -112,88 +101,76 @@
       <div class="breadcrumb-hero">
         <div class="container">
           <div class="breadcrumb-hero">
-            <h2>Stay Update on the Latest News!</h2>
-            <p>Scroll down to see the news based on your location</div>
+            <h2>Folding At Home</h2>
+            <p>An easy way to help find cures for diseases like Covid-19</p>
+            <a class="action"
+               href="https://docs.google.com/document/d/18MbKeipDbR_OfW_iRO4hGqNnib1Fti5rIgtfW9IerlY/edit?usp=sharing" target = "_blank">START HELPING!</a><br
+          </div>
         </div>
       </div>
     </section><!-- End Breadcrumbs -->
-
-
-
-    <section id="features" class="features">
+    <br>
+    <br>
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
-        <div class="row" id = "allnews">
+        <div class="portfolio-details-container">
 
-            <!-- <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" id="news1">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="" id="ti1">Our Mission</a></h5>
-                        <p class="card-text" id="para1">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod
-                            tempor ut labore et dolore magna aliqua.</p>
-                          <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
+          <div class="owl-carousel portfolio-details-carousel">
+            <img src="../assets/img/folding1.jpg" class="img-fluid" alt="">
+            <img src="../assets/img/folding4.png" class="img-fluid" alt="">
+            <img src="../assets/img/folding3.png" class="img-fluid" alt="">
           </div>
+        </div>
 
-
-          <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="fade-up">
-              <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title"><a href="" id="ti2">Our Plan</a></h5>
-                  <p class="card-text" id="para2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                      doloremque laudantium, totam rem.</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title"><a href="" id="ti3">Our Vision</a></h5>
-                  <p class="card-text" id="para3">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed
-                      quia magni dolores.</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title"><a href="" id="ti4">Our Care</a></h5>
-                  <p class="card-text" id="para4">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam
-                      laudantium voluptatem.</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
-              </div>
-            </div>
-          </div> -->
+        <div class="portfolio-description">
+          <h2>What is Folding At Home?</h2>
+          <p>
+            Folding@home is a crowdsourced project that focuses on protein folding & other biomedical problems, like Alzheimer's disease, cancer, Ebola,
+            and recently Covid-19. The project uses your idle computers to run simulations that give scientists a better understanding of diseases
+            and bring them one step closer to finding a cure.
+          </p>
+          <a href = "https://foldingathome.org/" target = "_blank">If you want to learn more, please click me</a><br><br>
+          <h2>Why Should I Care?</h2>
+          <p>
+            As of right now, scientists are rushing to find treatments & vaccines for Covid-19. Folding@home is a major contributer because the project
+            trys to understand how viral proteins, the main component of the Coronavirus, work, and how scientists can design therapeutics to stop them.
+            Contributing to the project is the best way that we can help the world stop this pandemic!
+          </p>
+          <h2>How Can I Help?</h2>
+          <p>
+            All Folding@home requires from you is your idle computer. Whenever you aren't using your computer, the project will be using your computer
+            to run its simulations. This is a win-win situation for everyone, because Folding@home gets a step closer to finding a cure for Covid-19,
+            and you are able to contribute.
+            Please visit the link below on instructions to get started.
+          </p>
+          <a href = "https://docs.google.com/document/d/18MbKeipDbR_OfW_iRO4hGqNnib1Fti5rIgtfW9IerlY/edit?usp=sharing" style = "font-size: 5vw" target = "_blank">Start Folding Now!</a><br><br>
 
         </div>
 
       </div>
-    </section>
 
+    </section><!-- End Portfolio Details Section -->
 
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
+    <div id="myModal" class="modal">
 
-          <!-- Modal content -->
-          <div class="modal-content">
-            <p>Please input the following:</p>
-              <label for="name">Location:</label><br>
-                <input type="text" id="location" name="location" value="" onkeyup = "updateLocation()"><br>
-                <p id = "state"></p>
-                 <p id = "error" style = "color: red"></p>
-              <input type="submit" value="Submit" onclick = "submit()">
-              <br>
-              <input type="button" id = "close" value="Cancel" onclick = "closeModal()">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <p>Please input the following:</p>
+            <label for="name">Location:</label><br>
+              <input type="text" id="location" name="location" value="" onkeyup = "updateLocation()"><br>
+              <p id = "state"></p>
+               <p id = "error" style = "color: red"></p>
+            <input type="submit" value="Submit" onclick = "submit()">
+            <br>
+            <input type="button" id = "close" value="Cancel" onclick = "closeModal()">
 
-          </div>
+        </div>
 
-      </div>
+    </div>
+
   </main><!-- End #main -->
-
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -249,10 +226,6 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../assets/js/news.js"></script>
-  <script crossorigin="anonymous" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-          src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
   <script src="../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -264,10 +237,9 @@
   <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
 
-
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 
-</body>
+  </body>
 
-</html>
+  </html>

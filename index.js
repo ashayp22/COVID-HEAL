@@ -66,6 +66,10 @@ app.get('/privatepolicy', function (req, res) { //handles get request
   res.render('policy');
 })
 
+app.get('/foldingathome', function (req, res) { //handles get request
+  res.render('folding');
+})
+
 app.listen(PORT, function () {
   console.log('go to http://localhost:3000/')
 })
