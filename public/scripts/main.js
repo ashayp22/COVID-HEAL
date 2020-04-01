@@ -49,12 +49,13 @@ function submit() {
 
     setCookie("user", "yes", 365)
     setCookie("code", code, 365)
+    setCookie("location", loc, 365)
 
     closeModal()
     if(window.location.pathname == "/news") {
       location.reload();
     } else if(window.location.pathname == "/home" || window.location.pathname == "/") {
-      updateHotline();
+      location.reload();
     }
 
   }
@@ -587,6 +588,7 @@ for(var i = 0; i < countries.length; i++) {
 }
 
 var code = ""
+var loc = ""
 
 function updateLocation() {
   var current = document.getElementById("location").value;
@@ -612,7 +614,8 @@ function updateLocation() {
       }
     }
   }
-  console.log(closest)
+
+  loc = region[index]
 
   if(index <= 58) {
     code = "US-" + code
