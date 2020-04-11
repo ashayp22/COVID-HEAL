@@ -52,9 +52,9 @@
 
   <script>
 
-    if (location.protocol !== 'https:') {
-      location.replace(`https:${location.href.substring(location.protocol.length)}`);
-    }
+    // if (location.protocol !== 'https:') {
+    //   location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    // }
 
   </script>
 
@@ -308,7 +308,7 @@
           <!-- Modal content -->
           <div class="modal-content">
             <p>Please input the following:</p>
-              <label for="name">Location:</label><br>
+              <label for="name">Location (State or Country):</label><br>
                 <input type="text" id="location" name="location" value="" onkeyup = "updateLocation()"><br>
                 <p id = "state"></p>
                  <p id = "error" style = "color: red"></p>

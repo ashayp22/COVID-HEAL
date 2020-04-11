@@ -137,12 +137,6 @@
 
     <section id="faq" class="faq section-bg">
       <div class="container" style = "text-align: center">
-        <h4>People have a common habit of touching their faces more than 20 times an hour.<br>
-          This is dangerous, especially since a virus usually enters your body through the mouth, nose, or eyes.
-          <br>We added in a feature that will help break this habit.<br><br>Using a live camera, we can
-          detect everytime you touch your face and notify you within seconds (don't worry, we aren't saving this data).
-          <br>Whether you're on a Zoom call, emailing a co-worker, or watching Netflix, we have you covered.
-          <br><br>Click below to try it out!</h3>
 
           <p id="notworking"></p>
           <a href="https://www.covidheal.org/camera" id="secure">Visit the secure website</a>
@@ -159,6 +153,13 @@
         <input id = "pause" class = "myButton" type = "button" value = "Pause Video" onclick = "pauseVideo()">
         <br><br>
         <input id = "notify" class = "myButton" type = "button" value = "Don't Send Notifications" onclick = "notifications()">
+        <br><br>
+        <h4>People have a common habit of touching their faces more than 20 times an hour.<br>
+          This is dangerous, especially since a virus usually enters your body through the mouth, nose, or eyes.
+          <br>We added in a feature that will help break this habit.<br><br>Using a live camera, we can
+          detect everytime you touch your face and notify you within seconds (don't worry, we aren't saving this data).
+          <br>Whether you're on a Zoom call, emailing a co-worker, or watching Netflix, we have you covered.
+        </h4>
 
       </div>
     </section>
@@ -171,7 +172,7 @@
         <!-- Modal content -->
         <div class="modal-content">
           <p>Please input the following:</p>
-            <label for="name">Location:</label><br>
+            <label for="name">Location (State or Country):</label><br>
               <input type="text" id="location" name="location" value="" onkeyup = "updateLocation()"><br>
               <p id = "state"></p>
                <p id = "error" style = "color: red"></p>
