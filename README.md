@@ -23,4 +23,4 @@ We encourage people to contribute to our website and suggest changes. Please cre
 For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU General Public License v3.0](https://github.com/ashayp22/COVID-19-Global-Hackathon-App/blob/master/LICENSE)
