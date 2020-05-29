@@ -11,6 +11,12 @@ An all-in-one tool, COVID-HEAL reminds you every time you touch your face, will 
 
 This project won "Efficient Remote Working under Remote Working & Education" in the EUvsVirus Hackathon, an international hackathon created by the European Commission. Over 2000 projects were submitted and 120 projects won and were involved in the Pan-European Matchathon, which was a matching event between projects and elite universities, companies, investors, accelerators, venture capitalists, and public authorities. COVID-HEAL was involved with this process and met with two partners, [Tech Tree Root](https://www.techtreeroot.org/) and [All Probono](https://allprobono.com/).
 
+## Authors
+
+* [Ashay Parikh](https://ashayp.com/)
+* [Labdhi Jain](https://github.com/nunu2021)
+* [Sohum Bhole](https://github.com/sohumbhole)
+
 ## Contributing
 We encourage people to contribute to our website and suggest changes. Please create a pull request and email [us](mailto:ashayp22@gmail.com) with your suggestion. 
 
