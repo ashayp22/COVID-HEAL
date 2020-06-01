@@ -138,8 +138,12 @@
     <section id="faq" class="faq section-bg">
       <div class="container" style = "text-align: center">
 
-          <p id="notworking"></p>
-          <a href="https://www.covidheal.org/camera" id="secure">Visit the secure website</a>
+        <div id = "noSupport">
+          <p id="notworking">This device doesn't support the feature, please try it on a computer.
+            <br>If you are on a computer, you may need to visit the <a href = "https://www.covidheal.org/camera">secure version</a> of our website.
+          </p>
+        </div>
+
         <input id = "tryitout" class = "myButton" type = "button" value = "Loading Models..." onclick = "startVideo()">
 
         <video id="video" width="400" height="200"></video>
