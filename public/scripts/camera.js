@@ -37,16 +37,16 @@ function loadHandTrack() {
   });
 }
 
-loadHandTrack()
-
 
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if (iOS) { //ios device
     document.getElementById('tryitout').style.visibility = "hidden";
     document.getElementById('tryitout').style.display = "none";
-} else {
+} else { //not an ios device
   document.getElementById("noSupport").style.display = "none";
   document.getElementById('noSupport').style.visibility = "hidden";
+
+  loadHandTrack()
 }
 
 function startVideo() {
