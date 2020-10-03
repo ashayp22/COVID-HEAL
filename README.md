@@ -1,5 +1,7 @@
 # COVID-HEAL
 
+![Preview](https://ashayp.com/images/projects/covidheal.PNG)
+
 An all-in-one tool, COVID-HEAL reminds you every time you touch your face, will keep you updated on the latest news based on your location, provide helpful tips and strategies to avoid COVID-19, and stay relaxed during these stressful times.
 
 ## Link
