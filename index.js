@@ -8,6 +8,7 @@ const path = require('path')
 const exec = require('child_process').exec;
 const webpush = require("web-push")
 const dotenv = require('dotenv');
+const axios = require("axios");
 dotenv.config();
 
 const publicVapidKey = process.env.VAPID_PUBLIC_KEY;
@@ -75,6 +76,75 @@ app.get('/privatepolicy', function (req, res) { //handles get request
 app.get('/foldingathome', function (req, res) { //handles get request
   res.render('folding');
 })
+
+app.post('/newsdata', function (req, res) { //handles get request
+
+  var loc = req.body.loc;
+  console.log("here")
+
+  axios({
+    "method":"GET",
+    "url":"https://coronavirus-smartable.p.rapidapi.com/news/v1/" + loc + "/",
+    "headers":{
+    "content-type":"application/octet-stream",
+    "x-rapidapi-host":"coronavirus-smartable.p.rapidapi.com",
+    "x-rapidapi-key":process.env.SMARTABLE_KEY,
+    "useQueryString":true
+    }
+    })
+    .then((response)=>{
+      res.json({news: response["data"]["news"]})
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+})
+
+app.post('/newsdata', function (req, res) { //handles get request
+
+  var loc = req.body.loc;
+
+  axios({
+    "method":"GET",
+    "url":"https://coronavirus-smartable.p.rapidapi.com/news/v1/" + loc + "/",
+    "headers":{
+    "content-type":"application/octet-stream",
+    "x-rapidapi-host":"coronavirus-smartable.p.rapidapi.com",
+    "x-rapidapi-key":process.env.SMARTABLE_KEY,
+    "useQueryString":true
+    }
+    })
+    .then((response)=>{
+      res.json({news: response["data"]["news"]})
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+})
+
+app.post('/newsstats', function (req, res) { //handles get request
+
+  var loc = req.body.loc;
+
+  axios({
+    "method":"GET",
+    "url":"https://coronavirus-smartable.p.rapidapi.com/stats/v1/" + loc + "/",
+    "headers":{
+    "content-type":"application/octet-stream",
+    "x-rapidapi-host":"coronavirus-smartable.p.rapidapi.com",
+    "x-rapidapi-key":process.env.SMARTABLE_KEY,
+    "useQueryString":true
+    }
+    })
+    .then((response)=>{
+      res.json({stats: response["data"]["stats"]})
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+})
+
+
 
 app.listen(PORT, function () {
   console.log('go to http://localhost:3000/')

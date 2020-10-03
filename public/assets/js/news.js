@@ -19,24 +19,12 @@ function getCookie(cname) {
 
 function callAPI(state) {
 
-    //f1e40b6a2eaa412e876cc21fe5669a0c --current key
-    //c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33 - new key
 
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://coronavirus-smartable.p.rapidapi.com/news/v1/" + state + "/",
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
-            "x-rapidapi-key": "c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33"
-        }
-    }
-
-
-    $.ajax(settings)
-        .done(function (data) {
-
+    $.ajax({
+        url: '/newsdata',
+        type: 'POST',
+        data: {"loc": state},
+        success: function (data) {
             const {news} = data;
 
             if(news.length == 0) {
@@ -100,16 +88,16 @@ function callAPI(state) {
                 div2.appendChild(div3);
                 div1.appendChild(div2);
                 document.getElementById("allnews").appendChild(div1);
-
             }
-        })
-        .fail(function () {
+        },
+        error: function(err) {
             var header = document.createElement('h5');
             header.innerHTML = "There isn't any current news based on your location.";
             header.style.color = "black"
             header.style.textAlign = "center"
             document.getElementById("features").appendChild(header);
-        });
+        }
+    });
 
 }
 

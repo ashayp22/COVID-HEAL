@@ -1,42 +1,34 @@
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://coronavirus-smartable.p.rapidapi.com/stats/v1/global/",
-  "method": "GET",
-  "headers": {
-      "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
-      "x-rapidapi-key": "c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33"
+
+
+$.ajax({
+  url: '/newsstats',
+  type: 'POST',
+  data: {"loc": 'global'},
+  success: function (data) {
+    var stats = [data.stats.totalConfirmedCases + "", data.stats.totalDeaths + "", data.stats.totalRecoveredCases + ""]
+
+
+    for(var z = 0; z < stats.length; z++) {
+      var number = stats[z];
+
+      var times = parseInt((number.length-1 )/ 3)+1
+      for(var i = 1; i < times; i++) {
+        var s = i * 3;
+        s = number.length - s - (i - 1);
+        number = number.substring(0, s) + "," + number.substring(s, number.length)
+      }
+      stats[z] = number
+    }
+
+    document.getElementById("total_cases").innerHTML = stats[0]
+    document.getElementById("total_deaths").innerHTML = stats[1]
+    document.getElementById("total_recoveries").innerHTML = stats[2]
+  },
+  error: function(err) {
+    // alert("error")
   }
-}
+});
 
-$.ajax(settings)
-    .done(function (data) {
-
-        var stats = [data.stats.totalConfirmedCases + "", data.stats.totalDeaths + "", data.stats.totalRecoveredCases + ""]
-
-
-        for(var z = 0; z < stats.length; z++) {
-          var number = stats[z];
-
-          var times = parseInt((number.length-1 )/ 3)+1
-          for(var i = 1; i < times; i++) {
-            var s = i * 3;
-            s = number.length - s - (i - 1);
-            number = number.substring(0, s) + "," + number.substring(s, number.length)
-          }
-          stats[z] = number
-        }
-
-        document.getElementById("total_cases").innerHTML = stats[0]
-        document.getElementById("total_deaths").innerHTML = stats[1]
-        document.getElementById("total_recoveries").innerHTML = stats[2]
-
-
-        console.log("success");
-    })
-    .fail(function () {
-        console.log("error");
-    });
 
     function getCookie(cname) {
       var name = cname + "=";
@@ -60,45 +52,33 @@ var loc = getCookie("location")
 
 if(code != "") {
 
-  var settings2 = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://coronavirus-smartable.p.rapidapi.com/stats/v1/" + code + "/",
-    "method": "GET",
-    "headers": {
-        "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
-        "x-rapidapi-key": "c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33"
+  $.ajax({
+    url: '/newsstats',
+    type: 'POST',
+    data: {"loc": code},
+    success: function (data) {
+      var stats = [data.stats.totalConfirmedCases + "", data.stats.totalDeaths + "", data.stats.totalRecoveredCases + ""]
+
+
+      for(var z = 0; z < stats.length; z++) {
+        var number = stats[z];
+
+        var times = parseInt((number.length-1 )/ 3)+1
+        for(var i = 1; i < times; i++) {
+          var s = i * 3;
+          s = number.length - s - (i - 1);
+          number = number.substring(0, s) + "," + number.substring(s, number.length)
+        }
+        stats[z] = number
+      }
+
+      document.getElementById("location_cases").innerHTML = stats[0]
+      document.getElementById("location_deaths").innerHTML = stats[1]
+      document.getElementById("location_recoveries").innerHTML = stats[2]
+      document.getElementById("individual_location").innerHTML = "Live Stats for " + loc;
+    },
+    error: function(err) {
+      // alert("error")
     }
-  }
-
-
-  $.ajax(settings2)
-      .done(function (data) {
-
-          var stats = [data.stats.totalConfirmedCases + "", data.stats.totalDeaths + "", data.stats.totalRecoveredCases + ""]
-
-
-          for(var z = 0; z < stats.length; z++) {
-            var number = stats[z];
-
-            var times = parseInt((number.length-1 )/ 3)+1
-            for(var i = 1; i < times; i++) {
-              var s = i * 3;
-              s = number.length - s - (i - 1);
-              number = number.substring(0, s) + "," + number.substring(s, number.length)
-            }
-            stats[z] = number
-          }
-
-          document.getElementById("location_cases").innerHTML = stats[0]
-          document.getElementById("location_deaths").innerHTML = stats[1]
-          document.getElementById("location_recoveries").innerHTML = stats[2]
-          document.getElementById("individual_location").innerHTML = "Live Stats for " + loc;
-
-
-          console.log("success");
-      })
-      .fail(function () {
-          console.log("error");
-      });
+  });
 }
