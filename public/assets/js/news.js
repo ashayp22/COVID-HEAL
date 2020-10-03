@@ -18,16 +18,23 @@ function getCookie(cname) {
 
 
 function callAPI(state) {
-    $.ajax({
-        type: "GET",
-        url: "https://api.smartable.ai/coronavirus/news/" + state,
 
-        // Request headers
-        beforeSend: function (xhrObj) {
-            xhrObj.setRequestHeader("Cache-Control", "no-cache");
-            xhrObj.setRequestHeader("Subscription-Key", "f1e40b6a2eaa412e876cc21fe5669a0c");
-        },
-    })
+    //f1e40b6a2eaa412e876cc21fe5669a0c --current key
+    //c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33 - new key
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://coronavirus-smartable.p.rapidapi.com/news/v1/" + state + "/",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
+            "x-rapidapi-key": "c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33"
+        }
+    }
+
+
+    $.ajax(settings)
         .done(function (data) {
 
             const {news} = data;

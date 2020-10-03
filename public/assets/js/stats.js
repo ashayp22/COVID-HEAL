@@ -1,13 +1,15 @@
-$.ajax({
-    type: "GET",
-    url: "https://api.smartable.ai/coronavirus/stats/global",
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://coronavirus-smartable.p.rapidapi.com/stats/v1/global/",
+  "method": "GET",
+  "headers": {
+      "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
+      "x-rapidapi-key": "c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33"
+  }
+}
 
-    // Request headers
-    beforeSend: function (xhrObj) {
-        xhrObj.setRequestHeader("Cache-Control", "no-cache");
-        xhrObj.setRequestHeader("Subscription-Key", "eba31584641f4cbeae6f39397823b9a1");
-    },
-})
+$.ajax(settings)
     .done(function (data) {
 
         var stats = [data.stats.totalConfirmedCases + "", data.stats.totalDeaths + "", data.stats.totalRecoveredCases + ""]
@@ -57,16 +59,20 @@ var loc = getCookie("location")
 
 
 if(code != "") {
-  $.ajax({
-      type: "GET",
-      url: "https://api.smartable.ai/coronavirus/stats/" + code,
 
-      // Request headers
-      beforeSend: function (xhrObj) {
-          xhrObj.setRequestHeader("Cache-Control", "no-cache");
-          xhrObj.setRequestHeader("Subscription-Key", "eba31584641f4cbeae6f39397823b9a1");
-      },
-  })
+  var settings2 = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://coronavirus-smartable.p.rapidapi.com/stats/v1/" + code + "/",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "coronavirus-smartable.p.rapidapi.com",
+        "x-rapidapi-key": "c7201c8cc7msh378871e1a345523p1f3ca7jsnf7e43fd1bd33"
+    }
+  }
+
+
+  $.ajax(settings2)
       .done(function (data) {
 
           var stats = [data.stats.totalConfirmedCases + "", data.stats.totalDeaths + "", data.stats.totalRecoveredCases + ""]
