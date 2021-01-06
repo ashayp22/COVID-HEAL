@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/ashayp22/COVID-19-Global-Hackathon-App#readme",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "child_process": "^1.0.2",
     "consolidate": "^0.15.1",
