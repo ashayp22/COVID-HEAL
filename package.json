@@ -31,7 +31,7 @@
     "express": "^4.17.1",
     "formidable": "^1.2.2",
     "fs": "0.0.1-security",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "multiparty": "^4.2.1",
     "mv": "^2.1.1",
     "path": "^0.12.7",
